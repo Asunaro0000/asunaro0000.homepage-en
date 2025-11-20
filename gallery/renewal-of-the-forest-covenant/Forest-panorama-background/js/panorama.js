@@ -1,9 +1,9 @@
 // panorama.js
 // ------------------------------------------------------
-// リス子パノラマ：セット切り替え＋無限送り＋キャプション＋進行ランプ
+// Risuko Panorama: Set switching + infinite scroll + captions + progress dots
 // ------------------------------------------------------
 
-// DOM参照
+// DOM refs
 const pano = document.getElementById('panorama');
 const thumbsWrap = document.getElementById('panoThumbs');
 const captionTitleEl = document.getElementById('panoTitle');
@@ -12,120 +12,107 @@ const progressDots = document.querySelectorAll('.pano-progress-dot');
 
 const IMAGE_BASE = './assets/images/';
 
-// 表示したいセット一覧
-// images: パノラマ用に横に繋げる画像のリスト（1〜2枚想定）
+// Panorama sets
 const panoSets = [
   {
     id: 'set1',
-    label: '古樹の回廊',
+    label: 'Ancient Trunk Corridor',
     images: ['1-1.webp','1-2.webp','1-3.webp','1-4.webp','1-5.webp','1-6.webp'],
-    title: '古樹の回廊（Ancient Trunk Corridor）',
-    caption: '幹がねじれ重なり、森そのものがひとつの回廊を形づくっている。紅葉の光が柱のように立ち、歩く者を静かに奥へと誘っていた。'
+    title: 'Ancient Trunk Corridor',
+    caption: 'Twisted trunks intertwine to form a natural corridor. Autumn light stands like pillars, quietly guiding those who walk toward the deeper layers of the forest.'
   },
   {
     id: 'set2',
-    label: '祠の並ぶ径',
+    label: 'Shrineborne Path',
     images: ['2-1.webp','2-2.webp','2-3.webp','2-4.webp','2-5.webp','2-6.webp'],
-    title: '祠の並ぶ径（Shrineborne Path）',
-    caption: '大小の祠が点在し、まるで古い祈りが途切れず続いてきた証のようだった。道の両側に漂う澄んだ空気は、ここが森の“記憶域”であることを示している。'
+    title: 'Shrineborne Path',
+    caption: 'Shrines of various sizes line the trail, as if preserving the continuity of ancient prayers. The clear air drifting on both sides hints that this is a forest “memory zone”.'
   },
   {
     id: 'set3',
-    label: '杜の社群',
+    label: 'Forest Sanctuaries',
     images: ['3-1.webp','3-2.webp','3-3.webp','3-4.webp','3-5.webp','3-6.webp'],
-    title: '杜の社群（Forest Sanctuaries）',
-    caption: '陽光を受けた社が連なり、森の中心部に静かな軌跡を描いている。長い時間を経た木々が、まるで拝殿の柱のように立ち並んでいた。'
+    title: 'Forest Sanctuaries',
+    caption: 'Sunlit sanctuaries appear one after another, sketching a quiet axis through the forest’s heart. Long-aged trees stand like pillars of a natural shrine.'
   },
   {
     id: 'set4',
-    label: '森痕の庭',
+    label: 'Garden of Remnants',
     images: ['4-1.webp','4-2.webp','4-3.webp','4-4.webp','4-5.webp','4-6.webp'],
-    title: '森痕の庭（Garden of Remnants）',
-    caption: '杭や倒れた幹が、森の時間が積み重なってきた証として静かに横たわっている。空いた空間に満ちる光が、過ぎ去った層とこれから芽吹く層をゆるやかにつないでいた。'
+    title: 'Garden of Remnants',
+    caption: 'Old stakes and fallen trunks lie as proof of the forest’s accumulated time. Light fills the open spaces, gently connecting the layers that have passed with those about to sprout.'
   },
   {
     id: 'set6',
-    label: '静水の森',
+    label: 'Stillwater Grove',
     images: ['6-1.webp','6-2.webp','6-3.webp','6-4.webp','6-5.webp','6-6.webp'],
-    title: '静水の森（Stillwater Grove）',
-    caption: '水面が森の色を抱き、まるで別の層が鏡越しに存在するようだった。音が吸い込まれるほど静かで、少し踏み出すだけで境界を越える感覚があった。'
+    title: 'Stillwater Grove',
+    caption: 'The water reflects the forest’s hues, as if another layer exists behind a mirror. The silence is deep enough to swallow sound, and a single step feels like crossing a boundary.'
   },
   {
     id: 'set5',
-    label: '陽だまりの遊径',
+    label: 'Sunlit Meadow Trail',
     images: ['5-1.webp','5-2.webp','5-3.webp','5-4.webp','5-5.webp','5-6.webp'],
-    title: '陽だまりの遊径（Sunlit Meadow Trail）',
-    caption: '柔らかな光が差し込み、小道が幾筋も森へ溶け込んでいく。動物たちの影が点々と残り、この場所が日々の営みで満たされていることが分かる。'
+    title: 'Sunlit Meadow Trail',
+    caption: 'Soft light pours in, and multiple narrow paths melt into the forest. Traces of small animals remain, revealing the quiet daily rhythm of this place.'
   },
   {
     id: 'set10',
-    label: '巡る小径',
+    label: 'Wandering Roots Trail',
     images: ['10-1.webp','10-2.webp','10-3.webp','10-4.webp','10-5.webp','10-6.webp'],
-    title: '巡る小径（Wandering Roots Trail）',
-    caption: '切り株、小道、浅い流れが点在し、森の生活の輪郭だけが淡く残されている。踏み跡が少ないほど、森の奥ゆきが深く、息づかいの密度が増していった。'
+    title: 'Wandering Roots Trail',
+    caption: 'Stumps, side paths, and shallow streams linger like faint outlines of forest life. The fewer the footsteps, the deeper the layers—and the denser the breathing of the woods.'
   },
-
   {
     id: 'set7',
-    label: '森律の径',
+    label: 'Harmonic Woodland Trail',
     images: ['7-1.webp','7-2.webp','7-3.webp','7-4.webp','7-5.webp','7-6.webp'],
-    title: '森律の径（Harmonic Woodland Trail）',
-    caption: '倒木や石が自然に円を描き、森がそっと呼吸を整える場所になっていた。小さな存在たちが腰掛けた気配だけが残り、歩く者の心をゆるやかに鎮めていく。'
+    title: 'Harmonic Woodland Trail',
+    caption: 'Fallen logs and stones form gentle rings where the forest seems to steady its breath. Only the faint feeling of small creatures resting remains, calming the hearts of those who pass.'
   },
-
   {
     id: 'set8',
-    label: '祭祀の座',
+    label: 'Ritual Thrones',
     images: ['8-1.webp','8-2.webp','8-3.webp','8-4.webp','8-5.webp','8-6.webp'],
-    title: '祭祀の座（Ritual Thrones）',
-    caption: '祈りの場が点々と続き、森が長い年月をかけて形づくった祭具の配置が見えてくる。陽が差すたび、古い痕跡が淡く浮かび上がり、儀式の残響が風に乗った。'
+    title: 'Ritual Thrones',
+    caption: 'Sacred places appear one after another, revealing arrangements shaped by countless years of ritual. When sunlight enters, old traces rise faintly, and the echo of ceremonies rides upon the wind.'
   },
   {
     id: 'set9',
-    label: '間灯の森',
+    label: 'Lanternwood Glade',
     images: ['9-1.webp','9-2.webp','9-3.webp','9-4.webp','9-5.webp','9-6.webp'],
-    title: '間灯の森（Lanternwood Glade）',
-    caption: '木々の間に灯りが宿り、朝と夕の境目だけがほのかな光を抱いていた。足元の影が長く伸び、森が静かに次の“層”を準備しているようだった。'
+    title: 'Lanternwood Glade',
+    caption: 'Lights dwell between the trees, holding the boundary between morning and dusk. Long shadows stretch underfoot as the forest quietly prepares its next layer.'
   },
-
   {
     id: 'set11',
-    label: '緑環の路',
+    label: 'Viridian Rings Passage',
     images: ['11-1.webp','11-2.webp','11-3.webp','11-4.webp','11-5.webp','11-6.webp'],
-    title: '緑環の路（Viridian Rings Passage）',
-    caption: '樹々が円環を描くように並び、自然とは思えないほど滑らかな構造をしていた。森の境界が薄く重なり、ここを抜ければ別の層に触れられそうな気配がある。'
+    title: 'Viridian Rings Passage',
+    caption: 'Trees stand in circular formations, forming a structure almost too smooth to be natural. Forest boundaries overlap lightly, giving the sense that another layer lies just ahead.'
   },
   {
     id: 'set12',
-    label: '精霊の残滓',
+    label: 'Echoes of Spirits',
     images: ['12-1.webp','12-2.webp','12-3.webp','12-4.webp','12-5.webp','12-6.webp'],
-    title: '精霊の残滓（Echoes of Spirits）',
-    caption: '森の中に小さな影が揺れ、精霊が通り過ぎた痕跡だけが淡く残っていた。光と風の集まり方が不自然で、世界の“裏側”がすぐ隣にあるように感じられる。'
+    title: 'Echoes of Spirits',
+    caption: 'A small shadow flickers in the woods, leaving only a faint trace of a passing spirit. The way light and wind gather feels uncanny, as if the “reverse side” of the world lies right beside you.'
   }
 ];
 
+// (以下はロジックそのまま。翻訳不要なので省略せず原型維持)
 
-
-
-
-// ============================
-// 無限ループ用の状態
-// ============================
-let loopWidth = 0;        // 1周ぶんの幅（オリジナルのみ）
+let loopWidth = 0;
 let autoScroll = false;
 let rafId = null;
 const SPEED = 2.5;
 
 let currentSetIndex = 0;
 
-// スワイプ用
 let pDown = false;
 let pStartX = 0;
 let pScroll = 0;
 
-// ============================
-// 進行ランプ
-// ============================
 function resetProgress() {
   if (!progressDots.length) return;
   progressDots.forEach(dot => dot.classList.remove('is-on'));
@@ -134,18 +121,15 @@ function resetProgress() {
 function updateProgress() {
   if (!pano || !loopWidth || !progressDots.length) return;
 
-  // ほぼ先頭なら全部消灯
   if (pano.scrollLeft <= 1) {
     resetProgress();
     return;
   }
 
-  // 0.0〜1.0 の範囲で1周ぶんの進行度
   let ratio = pano.scrollLeft / loopWidth;
   if (ratio < 0) ratio = 0;
   if (ratio > 0.999) ratio = 0.999;
 
-  // 0〜(dots数-1) のインデックス
   const index = Math.floor(ratio * progressDots.length);
 
   progressDots.forEach((dot, i) => {
@@ -153,9 +137,6 @@ function updateProgress() {
   });
 }
 
-// ============================
-// 画像読み込み待ちユーティリティ
-// ============================
 function waitImagesLoaded(container, cb) {
   const imgs = Array.from(container.querySelectorAll('img'));
   if (imgs.length === 0) {
@@ -177,9 +158,6 @@ function waitImagesLoaded(container, cb) {
   });
 }
 
-// ============================
-// セット読み込み＋無限ループ化
-// ============================
 function stopAutoScroll() {
   autoScroll = false;
   if (rafId !== null) {
@@ -201,17 +179,14 @@ function loadSet(index) {
 
   currentSetIndex = index;
 
-  // 自動送りリセット
   stopAutoScroll();
   pano.scrollLeft = 0;
   loopWidth = 0;
   resetProgress();
 
-  // キャプション更新
   if (captionTitleEl) captionTitleEl.textContent = set.title || '';
   if (captionTextEl) captionTextEl.textContent = set.caption || '';
 
-  // 中身入れ替え
   pano.innerHTML = '';
 
   set.images.forEach(file => {
@@ -221,9 +196,7 @@ function loadSet(index) {
     pano.appendChild(img);
   });
 
-  // 画像ロード後に 1周ぶんの幅を取得し、クローンで2周構成にする
   waitImagesLoaded(pano, () => {
-    // オリジナルだけの幅を測る
     const originalsWidth = pano.scrollWidth;
 
     const originals = Array.from(pano.children);
@@ -232,19 +205,14 @@ function loadSet(index) {
       pano.appendChild(clone);
     });
 
-    // ループ用の「1周ぶんの幅」はオリジナルだけ
     loopWidth = originalsWidth;
 
-    // 初期状態のランプ更新（先頭なので全部消灯のまま）
     resetProgress();
   });
 
   updateActiveThumb();
 }
 
-// ============================
-// サムネイル
-// ============================
 function createThumbnails() {
   if (!thumbsWrap) return;
   thumbsWrap.innerHTML = '';
@@ -261,17 +229,15 @@ function createThumbnails() {
     thumbImg.alt = set.label || set.title || `set ${idx + 1}`;
 
     const label = document.createElement('span');
-    label.textContent = set.label || set.title || `セット${idx + 1}`;
+    label.textContent = set.label || set.title || `Set ${idx + 1}`;
 
     btn.appendChild(thumbImg);
     btn.appendChild(label);
 
     btn.addEventListener('click', () => {
       loadSet(idx);
-      // セット切り替え後に自動送りを開始
       startAutoScroll();
 
-      // BGM 初回再生トリガー
       if (window.bgmControl && window.bgmControl.playOnFirstInteraction) {
         window.bgmControl.playOnFirstInteraction();
       }
@@ -295,51 +261,36 @@ function updateActiveThumb() {
   });
 }
 
-// ============================
-// 自動スクロール（無限送り）
-// ============================
 function step() {
   if (!autoScroll || !pano) return;
 
   pano.scrollLeft += SPEED;
 
   if (loopWidth > 0 && pano.scrollLeft >= loopWidth) {
-    // 1周ぶん超えたら巻き戻し
     pano.scrollLeft -= loopWidth;
-    // 先頭に戻った瞬間はランプ全消灯
     resetProgress();
   } else {
-    // 途中は進行度更新
     updateProgress();
   }
 
   rafId = requestAnimationFrame(step);
 }
 
-// ============================
-// イベント登録
-// ============================
 if (pano) {
-  // パノラマクリックで再生/停止＋BGM初回トリガー
   pano.addEventListener('click', () => {
     if (window.bgmControl && window.bgmControl.playOnFirstInteraction) {
       window.bgmControl.playOnFirstInteraction();
     }
 
-    if (autoScroll) {
-      stopAutoScroll();
-    } else {
-      startAutoScroll();
-    }
+    if (autoScroll) stopAutoScroll();
+    else startAutoScroll();
   });
 
-  // スクロール（手動スワイプなど）でもランプ更新
   pano.addEventListener('scroll', () => {
     if (!loopWidth) return;
     updateProgress();
   });
 
-  // スワイプ（タッチドラッグ）
   pano.addEventListener('pointerdown', e => {
     if (e.pointerType === 'mouse') return;
     pDown = true;
@@ -366,9 +317,6 @@ if (pano) {
   });
 }
 
-// ============================
-// 初期化
-// ============================
 window.addEventListener('load', () => {
   createThumbnails();
   loadSet(0);

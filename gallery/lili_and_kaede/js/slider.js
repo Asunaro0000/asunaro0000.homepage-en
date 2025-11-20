@@ -3,22 +3,24 @@ const $  = (s, r=document) => r.querySelector(s);
 const $$ = (s, r=document) => Array.from(r.querySelectorAll(s));
 
 // ---- 編集ポイント：この配列を書き換えて使う ----
+// ---- EDIT HERE: English version ----
 const slides = [
   {
     src: "./thumbnail/kv01.webp",
     thumb: "./thumbnail/kv01.webp",
-    href: "https://asunaro0000.github.io/lili-and-kaede/" ,
-    title: "リリと楓の Happy Halloween ― Storyboard",
-    caption: "ハロウィンの夜を思いきり楽しむふたりの時間を、一枚ずつのストーリーボードでたどれるページです。"
+    href: "https://asunaro0000.github.io/lili-and-kaede/",
+    title: "Lili & Kaede — Happy Halloween Storyboard",
+    caption: "Follow their night of pure Halloween fun through a sequence of illustrated storyboard moments."
   },
   {
     src: "./thumbnail/kv02.webp",
     thumb: "./thumbnail/kv02.webp",
-    href: "./halloween_single/index.html" ,
-    title: "リリと楓の Halloween Collection ― Single Scene",
-    caption: "ハロウィンの夜をモチーフにしたリリと楓の展示室です。\n単作イラストを、雰囲気そのままに並べています。"
+    href: "./halloween_single/index.html",
+    title: "Lili & Kaede — Halloween Collection (Single Scene)",
+    caption: "A dedicated room featuring single-scene Halloween illustrations of Lili and Kaede, arranged to preserve the atmosphere of the night."
   },
 ];
+
 
 function createSlider(mount, slides = []){
   const track  = mount.querySelector(".sld__track");

@@ -1,11 +1,11 @@
 <!doctype html>
-<html lang="ja">
+<html lang="en">
   <audio id="bgmAudio" preload="none"></audio>
 
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>森の営み | Asunaro Works</title>
+  <title>Life of the Forest | Asunaro Works</title>
 
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-1NCR09VMKR"></script>
@@ -16,11 +16,11 @@
     gtag('config', 'G-1NCR09VMKR');
   </script>
 
-  <!-- site header（共通CSS） -->
+  <!-- site header -->
   <link rel="stylesheet" href="../../../css/header.css">
   <link rel="stylesheet" href="../../../css/style.css">
 
-  <!-- パノラマ専用CSS -->
+  <!-- panorama CSS -->
   <link rel="stylesheet" href="./css/panorama.css">
   
 </head>
@@ -40,15 +40,16 @@
   <main class="container">
     <div class="room-head">
       <div class="room-head-text">
-        <h1>森の営み</h1>
+        <h1>Life of the Forest</h1>
         <p class="lead">
-          森の形や光の流れ、倒木・切り株・祠などの要素を横に並べて整理した資料展示です。<br>
-          背景制作や世界観設計のために、森の一連の景観が確認できます。
-          
+          A reference-style panoramic exhibition arranging forest structures,  
+          flows of light, fallen logs, stumps, shrines, and other elements horizontally.<br>
+          Useful for background creation and worldbuilding, allowing you to observe  
+          the forest’s continuous landscape as a whole.
         </p>
       </div>
 
-      <!-- ☆ BGMボタンをここに移動 ☆ -->
+      <!-- BGM button -->
       <button id="bgmToggle" class="pano-bgm-btn">
         BGM: OFF
       </button>
@@ -56,12 +57,11 @@
 
 <section class="panorama-wrap">
 
-
-  <div class="panorama" id="panorama" aria-label="Risuko nature walk panorama">
-    <!-- panorama.js が画像を挿入 -->
+  <div class="panorama" id="panorama" aria-label="Forest panorama">
+    <!-- panorama.js inserts images -->
   </div>
 
-  <!-- ★ 進行ランプ -->
+  <!-- Progress indicator -->
   <div class="pano-progress" aria-hidden="true">
     <span class="pano-progress-dot" data-step="1"></span>
     <span class="pano-progress-dot" data-step="2"></span>
@@ -69,27 +69,23 @@
   </div>
 </section>
 
-  <!-- キャプション -->
+  <!-- Caption -->
   <div class="pano-caption-block">
     <h2 id="panoTitle"></h2>
-    <p id="panoText">
-      
-    </p>
+    <p id="panoText"></p>
   </div>
 
-  <!-- サムネイル群 -->
-  <div class="pano-thumbs" id="panoThumbs" aria-label="パノラマのセット選択">
-    <!-- panorama.js がサムネイルボタンを自動生成 -->
+  <!-- Thumbnails -->
+  <div class="pano-thumbs" id="panoThumbs" aria-label="Panorama set selection">
+    <!-- panorama.js will auto-generate the thumbnail buttons -->
   </div>
-</section>
 
-
-  <!-- BGM（パスは環境に合わせて変更） -->
+  <!-- BGM -->
   <audio id="bgmAudio" preload="auto" loop></audio>
 
   <footer>© 2025 Asunaro Works.</footer>
 
-  <!-- パノラマ生成＆ドラッグ処理 -->
+  <!-- Panorama and drag logic -->
   <script src="./js/panorama.js"></script>
   <script src="./js/bgm.js"></script>
 

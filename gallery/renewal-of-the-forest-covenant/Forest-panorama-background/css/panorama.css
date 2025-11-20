@@ -313,7 +313,7 @@
   transform: translateY(-1px);
 }
 .panorama {
-  height: 1000px; /* ← ここを画像の高さと同じにする */
+   /* ← ここを画像の高さと同じにする */
   overflow-x: auto;
   white-space: nowrap;
   line-height: 0; /* ★ 下の余白を完全に消す */

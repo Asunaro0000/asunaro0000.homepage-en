@@ -7,32 +7,33 @@ const slides = [
   {
     src: "./thumbnail/kv01.webp",
     thumb: "./thumbnail/kv01.webp",
-    href: "https://asunaro0000.github.io/Renewal-of-the-Forest-Covenant/"  ,
-    title: "森の契約更新譚 ― Storyboard",
-    caption: "森に宿る約束が再び目を覚ます。 背景美術と物語イラストで描く「契約更新」の風景。"
+    href: "https://asunaro0000.github.io/Renewal-of-the-Forest-Covenant/",
+    title: "Renewal of the Forest Covenant — Storyboard",
+    caption: "The ancient promise dwelling in the forest stirs once more. A sequence of scenes depicting the renewal through background art and atmospheric storytelling."
   },
   {
     src: "./thumbnail/kv02.webp",
     thumb: "./thumbnail/kv02.webp",
     href: "./Forest_of_Story_Marks/index.html",
-    title: "栞の森 ― Single Scene",
-    caption: "森に刻まれた一瞬を栞にして、背景美術で紡ぐ情景。"
+    title: "Forest of Story Marks — Single Scene",
+    caption: "Moments preserved like bookmarks, expressed through quiet, atmospheric background art."
   },
   {
     src: "./thumbnail/kv03.webp",
     thumb: "./thumbnail/kv03.webp",
     href: "./Forest-Sprits/index.html",
-    title: "精霊の森 ― Single Scene",
-    caption: "精霊×森の一場面を収めた小さな展示室。背景のゆるやかな動きが、奥へと続く森の気配をそっと示します。"
+    title: "Forest of Spirits — Single Scene",
+    caption: "A small gallery capturing one-scene glimpses of spirits within the forest. The gentle background motion subtly suggests a path leading deeper inside."
   },
   {
     src: "./thumbnail/kv04.webp",
     thumb: "./thumbnail/kv04.webp",
     href: "./Forest-panorama-background/index.html",
-    title: "森の営み ― panorama Scene",
-    caption: "森の形や光の流れ、倒木・切り株・祠などの要素を横に並べて整理した資料展示です。背景制作や世界観設計のために、森の一連の景観が確認できます。"
+    title: "Life of the Forest — Panorama",
+    caption: "A horizontal reference exhibit organizing forest structures, flows of light, fallen logs, stumps, and shrines. Useful for background creation and worldbuilding, allowing a clear view of the forest’s continuous landscape."
   },
 ];
+
 
 function createSlider(mount, slides = []){
   const track  = mount.querySelector(".sld__track");

@@ -8,51 +8,51 @@
   if (!bannerImage || !bannerCaption || !bannerLink || !bannerDotsBox) return;
 
   // ★ ここを差し替えれば内容を自由に増減できる
-  const banners = [
-     {
-      src: "./assets/banner/banner7.webp",
-      caption: "森の資料室「森の営み」はこちらから。",
-      href: "./gallery/renewal-of-the-forest-covenant/Forest-panorama-background/index.html",
-      btnLabel: "▶ 森の資料室「森の営み」へ"
-    },   
-    {
-      src: "./assets/banner/banner6.webp",
-      caption: "森の精霊ギャラリーはこちらから。",
-      href: "./gallery/renewal-of-the-forest-covenant/Forest-Sprits/index.html",
-      btnLabel: "▶ 森の精霊ギャラリーへ"
-    },
-    {
-      src: "./assets/banner/banner5.webp",
-      caption: "ハロウィンのパノラマギャラリーはこちらから。",
-      href: "./gallery/lili_and_kaede/halloween_single/index.html",
-      btnLabel: "▶ ハロウィンパノラマへ"
-    },
-    {
-      src: "./assets/banner/banner4.webp",
-      caption: "リス子のパノラマギャラリーはこちらから。",
-      href: "./gallery/Risko/risuko_room/index.html",
-      btnLabel: "▶ リス子のパノラマへ"
-    },
-    {
-      src: "./assets/banner/banner3.webp",
-      caption: "栞の森の背景美術ルームをオープンしました。",
-      href: "./gallery/renewal-of-the-forest-covenant/Forest_of_Story_Marks/index.html",
-      btnLabel: "▶ 栞の森、背景美術ルームへ"
-    },
-    {
-      src: "./assets/banner/banner2.webp",
-      caption: "カメコの日常、一枚絵のギャラリーを公開しました。",
-      href: "./gallery/Usako_and_Kameko/kameko_diary/index.html",
-      btnLabel: "▶ カメコの日常へ"
-    },
-    {
-      src: "./assets/banner/banner1.webp",
-      caption: "ウサ子の日常、一枚絵のギャラリーを公開しました。",
-      href: "./gallery/Usako_and_Kameko/usako_diary/index.html",
-      btnLabel: "▶ ウサ子の日常へ"
-    },
+const banners = [
+  {
+    src: "./assets/banner/banner7.webp",
+    caption: "Visit the Forest Archive Room: Forest Activity.",
+    href: "./gallery/renewal-of-the-forest-covenant/Forest-panorama-background/index.html",
+    btnLabel: "▶ Go to Forest Activity"
+  },
+  {
+    src: "./assets/banner/banner6.webp",
+    caption: "Explore the Forest Spirit Gallery.",
+    href: "./gallery/renewal-of-the-forest-covenant/Forest-Sprits/index.html",
+    btnLabel: "▶ Open Forest Spirit Gallery"
+  },
+  {
+    src: "./assets/banner/banner5.webp",
+    caption: "The Halloween Panorama Gallery is now open.",
+    href: "./gallery/lili_and_kaede/halloween_single/index.html",
+    btnLabel: "▶ View Halloween Panorama"
+  },
+  {
+    src: "./assets/banner/banner4.webp",
+    caption: "Enter Risuko's Panorama Gallery.",
+    href: "./gallery/Risko/risuko_room/index.html",
+    btnLabel: "▶ View Risuko's Panorama"
+  },
+  {
+    src: "./assets/banner/banner3.webp",
+    caption: "The background art room of Shiori no Mori is now open.",
+    href: "./gallery/renewal-of-the-forest-covenant/Forest_of_Story_Marks/index.html",
+    btnLabel: "▶ Open Shiori no Mori Room"
+  },
+  {
+    src: "./assets/banner/banner2.webp",
+    caption: "Kameko's daily-life gallery has been released.",
+    href: "./gallery/Usako_and_Kameko/kameko_diary/index.html",
+    btnLabel: "▶ Visit Kameko's Daily Life"
+  },
+  {
+    src: "./assets/banner/banner1.webp",
+    caption: "Usako's daily-life gallery has been released.",
+    href: "./gallery/Usako_and_Kameko/usako_diary/index.html",
+    btnLabel: "▶ Visit Usako's Daily Life"
+  },
+];
 
-  ];
 
   let index = 0;
   const INTERVAL_MS = 4000; // 4秒ごとに切り替え

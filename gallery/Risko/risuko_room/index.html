@@ -1,11 +1,11 @@
 <!doctype html>
-<html lang="ja">
+<html lang="en">
   <audio id="bgmAudio" preload="none"></audio>
 
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>リス子の自然散歩の部屋 | Asunaro Works</title>
+  <title>Risuko — Nature Walk Room | Asunaro Works</title>
 
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-1NCR09VMKR"></script>
@@ -16,11 +16,11 @@
     gtag('config', 'G-1NCR09VMKR');
   </script>
 
-  <!-- site header（共通CSS） -->
+  <!-- site header -->
   <link rel="stylesheet" href="../../../css/header.css">
   <link rel="stylesheet" href="../../../css/style.css">
 
-  <!-- パノラマ専用CSS -->
+  <!-- panorama CSS -->
   <link rel="stylesheet" href="./css/panorama.css">
   
 </head>
@@ -38,38 +38,42 @@
   </header>
 
   <main class="container">
-    <h1>リス子の自然散歩の部屋</h1>
+    <h1>Risuko — Nature Walk Room</h1>
     <p class="lead">
-      ひと続きの森を、横に歩くように見られるパノラマ展示です。<br>
-      クリック／スワイプで横へ進み、最後まで行くと次の部屋に入れます。（スマホは横向き推奨）
+      A panoramic forest walk you can view as if moving sideways through a single connected scene.<br>
+      Click or swipe to move horizontally. Reaching the end will take you to the next room. (Landscape mode recommended on mobile)
     </p>
 
-    <!-- パノラマ本体 -->
+    <!-- panorama -->
     <section class="panorama-wrap">
       <div class="panorama" id="panorama" aria-label="Risuko nature walk panorama">
-        <!-- panorama.js が 1.webp ～ 21.webp を自動挿入 -->
+        <!-- panorama.js inserts 1.webp–21.webp automatically -->
       </div>
     </section>
 
-    <!-- 最初から用意しておくが、スクロール完了まで透明 -->
-  <div id="panoGoto" class="pano-goto">
-    <a href="https://asunaro0000.github.io/risuko/" class="pano-goto__btn pano-disabled">
-      リス子のストーリーボードへ
-    </a>
-    <button id="bgmToggle" class="pano-bgm-btn">
-      BGM: OFF
-    </button>
-  </div>
-  <!-- BGM（パスは環境に合わせて変更） -->
-  <audio id="bgmAudio" src="./bgm/bgm.mp3" preload="auto" loop></audio>
+    <!-- Buttons (hidden until scroll completion) -->
+    <div id="panoGoto" class="pano-goto">
+      <a href="https://asunaro0000.github.io/risuko/" class="pano-goto__btn pano-disabled">
+        Go to Risuko Storyboard
+      </a>
+      <button id="bgmToggle" class="pano-bgm-btn">
+        BGM: OFF
+      </button>
+    </div>
+
+    <!-- BGM -->
+    <audio id="bgmAudio" src="./bgm/bgm.mp3" preload="auto" loop></audio>
+
+  </main>
 
   <footer>© 2025 Asunaro Works.</footer>
 
-  <!-- パノラマ生成＆ドラッグ処理 -->
+  <!-- panorama logic -->
   <script src="./js/panorama.js"></script>
   <script src="./js/bgm.js"></script>
 
   <script type="module" src="../../../js/extensions/nav-toggle.js"></script>
+
   <audio id="bgmAudio" preload="none"></audio>
 
 </body>

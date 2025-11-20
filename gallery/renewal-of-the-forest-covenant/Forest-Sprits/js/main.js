@@ -50,132 +50,135 @@
 const galleryItems = [
   {
     src: "assets/images/1.webp",
-    alt: "秋の森で本を読む少女とフクロウ",
-    caption: "風音にまぎれて、頁がそっと息づく。"
+    alt: "A girl reading in the autumn forest with an owl nearby",
+    caption: "Pages breathe softly between the rustling wind."
   },
 
   {
     src: "assets/images/2.webp",
-    alt: "月明かりに照らされた少女と紅葉の光",
-    caption: "満ちる光が、胸の奥をそっと温めた。"
+    alt: "A girl illuminated by moonlight and drifting autumn glow",
+    caption: "The filling light gently warms the quiet space within."
   },
   {
     src: "assets/images/3.webp",
-    alt: "手のひらに光を受ける少女と秋空",
-    caption: "ひらめく光が、世界の輪郭を描いていく。"
+    alt: "A girl receiving light in her hands beneath the autumn sky",
+    caption: "A flicker of light begins to outline the world."
   },
 
   {
     src: "assets/images/4.webp",
-    alt: "切り株に座る少女と寄り添う精霊たち",
-    caption: "静かな息が、森の奥で青く揺れた。"
+    alt: "A girl sitting on a stump embraced by forest spirits",
+    caption: "A calm breath shimmers blue in the forest depths."
   },
 
   {
     src: "assets/images/5.webp",
-    alt: "木漏れ日の下で木の実を分け合う少女と小さな仲間",
-    caption: "あたたかい匂いに誘われて、小さな輪がひらく。"
+    alt: "A girl sharing nuts with small companions under soft sunlight",
+    caption: "A warm scent gathers small circles of life together."
   },
 
   {
     src: "assets/images/6.webp",
-    alt: "大きな葉に伏せる少女の情景",
-    caption: "露のきらめきに耳をすませ、葉の海をそっと進む。"
+    alt: "A girl resting beneath a large leaf",
+    caption: "Listening to the sparkle of dew, she drifts through the sea of leaves."
   },
   {
     src: "assets/images/7.webp",
-    alt: "木の枝で風を受ける少女と精霊たち",
-    caption: "風をまとって座ると、青い火がほほえみ寄る。"
+    alt: "A girl receiving the wind atop a branch, with spirits by her side",
+    caption: "Wrapped in wind, the blue flame leans in with a smile."
   },
   {
     src: "assets/images/8.webp",
-    alt: "虹色の翼を広げる少女と精霊の情景",
-    caption: "ひかりの翼が森を照らし、青い声が舞い上がる。"
+    alt: "A girl with rainbow-colored wings and forest spirits",
+    caption: "Wings of light illuminate the forest as blue voices rise."
   },
   {
     src: "assets/images/9.webp",
-    alt: "大きな梟とともに佇む青衣の少女",
-    caption: "静かなまなざしが合図になり、森の気配が深まる。"
+    alt: "A girl in blue standing quietly with a great owl",
+    caption: "A calm gaze signals the forest to deepen its presence."
   },
   {
     src: "assets/images/10.webp",
-    alt: "花原を歩き蓮の灯りを手にする少女",
-    caption: "花風のなかで灯をすくい、ひと息の祈りを落とす。"
+    alt: "A girl holding a lotus lantern while walking through a flower field",
+    caption: "Gathering light in the flower breeze, she releases a gentle prayer."
   },
+
   {
     src: "assets/images/11.webp",
-    alt: "花の中で眠る少女の情景",
-    caption: "花の息に包まれ、夢だけが揺れていた。"
+    alt: "A girl sleeping within a bed of flowers",
+    caption: "Wrapped in floral breath, only dreams softly swayed."
   },
   {
     src: "assets/images/12.webp",
-    alt: "兎耳の巫女たちと社の情景",
-    caption: "朝の社に小さな足音が集い、森が目を覚ます。"
+    alt: "Rabbit-eared shrine maidens at a morning sanctuary",
+    caption: "Small footsteps gather at the dawn shrine as the forest awakens."
   },
   {
     src: "assets/images/13.webp",
-    alt: "白樺の根元に座る少女と精霊と大蛇",
-    caption: "白樺の影でひと息つくと、古い守り手たちが寄り添う。"
+    alt: "A girl resting under birch trees with spirits and a great serpent",
+    caption: "In the birch shadows, the old guardians draw near."
   },
   {
     src: "assets/images/14.webp",
-    alt: "鹿の仮面をつけた巫女の情景",
-    caption: "仮面の奥に静かな気配が宿り、葉音がそっと結ぶ。"
+    alt: "A shrine maiden wearing a deer mask",
+    caption: "A quiet presence stirs behind the mask as leaf-whispers gently bind the air."
   },
   {
     src: "assets/images/15.webp",
-    alt: "森を歩む緑の巫女と精霊たち",
-    caption: "緑の息をまといながら、青い影がつれだって揺れる。"
+    alt: "A green-clad shrine maiden walking with forest spirits",
+    caption: "Clad in green breath, blue shadows sway in harmony."
   },
 
   {
     src: "assets/images/16.webp",
-    alt: "神社の屋根の上で青い火を抱く狐耳の少女",
-    caption: "祈りの灯が、静かに揺れる。"
+    alt: "A fox-eared girl holding blue fire atop a shrine roof",
+    caption: "The flame of prayer flickers in tranquil silence."
   },
   {
     src: "assets/images/17.webp",
-    alt: "吊り下がる鈴の間で青い狐火を見上げる少女",
-    caption: "呼ばれた気配に、胸がふるえる。"
+    alt: "A girl gazing at foxfire beneath hanging bells",
+    caption: "A summoned presence sends a tremble through her chest."
   },
   {
     src: "assets/images/18.webp",
-    alt: "社の前で振り返る狐耳の少女と青い狐火",
-    caption: "風が扉をひらき、道が続く。"
+    alt: "A fox-eared girl turning back with floating blue foxfire",
+    caption: "The wind opens the door, revealing the path ahead."
   },
   {
     src: "assets/images/19.webp",
-    alt: "大樹の枝に座る緑の仮面の小さな存在",
-    caption: "森の目が、そっと見守る。"
+    alt: "A small masked being sitting on a great tree branch",
+    caption: "The forest's quiet eyes keep watch from above."
   },
   {
     src: "assets/images/20.webp",
-    alt: "幹にひそむ緑の光と、大木に刻まれた無数の窓",
-    caption: "樹の奥には、古い記憶が眠る。"
+    alt: "Green light dwelling in a tree trunk with many carved windows",
+    caption: "Deep within the trunk, ancient memories sleep."
   },
+
   {
     src: "assets/images/21.webp",
-    alt: "枝の上で黒い小獣と向き合う緑髪の少女",
-    caption: "影の声が、葉を揺らす。"
+    alt: "A green-haired girl facing a small black creature on a branch",
+    caption: "A shadowed voice rustles the leaves around them."
   },
   {
     src: "assets/images/22.webp",
-    alt: "並び立つ白鹿と黒鹿の精霊たち",
-    caption: "森の主は、静かに姿を現す。"
+    alt: "White and black stag spirits standing side by side",
+    caption: "The forest’s rulers appear in silent dignity."
   },
   {
     src: "assets/images/23.webp",
-    alt: "炎をまとった白い小獣が森を跳ねる情景",
-    caption: "ひとすじの火が、闇を照らす。"
+    alt: "A small white creature leaping through the forest wrapped in flame",
+    caption: "A single trail of fire lights the darkness."
   },
   {
     src: "assets/images/24.webp",
-    alt: "水面に立ち、近づく青い魚の精霊を見つめる少女",
-    caption: "揺れる輪の向こうに、呼ぶ声があった。"
+    alt: "A girl standing on the water’s surface, watching a blue fish spirit approach",
+    caption: "Beyond the rippling rings, a voice quietly calls."
   },
 
-  // ここに追加していけばカードが増える
+  // Add more items here
 ];
+
 
 
 // =====================================

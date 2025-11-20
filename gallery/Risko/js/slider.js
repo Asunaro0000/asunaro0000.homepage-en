@@ -3,23 +3,24 @@ const $  = (s, r=document) => r.querySelector(s);
 const $$ = (s, r=document) => Array.from(r.querySelectorAll(s));
 
 // ---- 編集ポイント：この配列を書き換えて使う ----
+// ---- EDIT HERE: English version ----
 const slides = [
   {
     src: "./thumbnail/kv01.webp",
     thumb: "./thumbnail/kv01.webp",
-    href: "https://asunaro0000.github.io/risuko/" ,
-    title: "リス子 ― Storyboard",
-    caption: "森の贈りもの ― リス子の小さな旅"
+    href: "https://asunaro0000.github.io/risuko/",
+    title: "Risuko — Storyboard",
+    caption: "Forest Gifts — A Small Journey of Risuko"
   },
   {
     src: "./thumbnail/kv02.webp",
     thumb: "./thumbnail/kv02.webp",
     href: "./risuko_room/index.html",
-    title: "リス子の自然散歩 ― Single Scene",
-    caption: "明るく元気なリス子の世界を楽しめるギャラリーです。"
+    title: "Risuko's Nature Walk — Single Scene",
+    caption: "A bright and lively gallery filled with Risuko's world."
   },
-
 ];
+
 
 function createSlider(mount, slides = []){
   const track  = mount.querySelector(".sld__track");

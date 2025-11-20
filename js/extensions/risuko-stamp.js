@@ -2,12 +2,13 @@
 const STAMP_PATH = "./stamps/";
 
 // ファイル名（拡張子なし）。ここに追記するだけで増やせる
-const stampNames = [
-  "いま行く！","おはよー！","ごめんね","しあわせ～","とまらない～！","ねむねむ…","あそぼ～","いい感じ！",
-  "はぁ～…","ばっちり！","ふぇ？","またね！","もうだめ～…","もぉ～！",
-  "わかんない！","今日もおつかれ！"
-];
 
+
+const stampNames = [
+  "On my way!", "Morning!", "Sorry!", "So happy!", "Cant stop!", "Sleepy...", 
+  "Lets play!", "Feeling good!", "Sigh...", "Perfect!", "Huh?", "See you!", 
+  "I cant anymore...", "Geez!", "No idea!", "Good job today!"
+];
 // 要素取得
 const wrap  = document.getElementById("risuko-stamp");
 const img   = document.getElementById("risuko-stamp-img");

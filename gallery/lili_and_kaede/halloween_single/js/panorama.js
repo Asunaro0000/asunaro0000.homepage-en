@@ -112,13 +112,13 @@ function activateButton() {
     let nextRoom = null;
     if (currentSet === 1) {
       nextRoom = 2;                   // Room1 → Room2
-      gotoBtn.textContent = "Room2へ";
+      gotoBtn.textContent = "Go to Room2";
     } else if (currentSet === 2) {
       nextRoom = 3;                   // Room2 → Room3
-      gotoBtn.textContent = "Room3へ";
+      gotoBtn.textContent = "Go to Room3";
     } else if (currentSet === 3) {
       nextRoom = "story";             // Room3 → ストーリーボード
-      gotoBtn.textContent = "ストーリーボードへ";
+      gotoBtn.textContent = "Go to Storyboad";
     }
 
     // ★ ボタンクリック動作を上書き

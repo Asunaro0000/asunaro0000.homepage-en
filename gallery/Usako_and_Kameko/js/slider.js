@@ -2,28 +2,31 @@
 const $  = (s, r=document) => r.querySelector(s);
 const $$ = (s, r=document) => Array.from(r.querySelectorAll(s));
 
-// ---- 編集ポイント：この配列を書き換えて使う ----
+// ---- Replace the text here ----
 const slides = [
   {
     src: "./thumbnail/usako_and_kameko.webp",
     thumb: "./thumbnail/usako_and_kameko.webp",
-    href: "https://asunaro0000.github.io/usako-and-kameko/" ,
-    title: "ウサ子とカメコ ― Storyboard",
-    caption: "雨上がりの森を旅する、ウサ子とカメコ。\n二人の一日を81枚の情景詩として綴りました。"
+    href: "https://asunaro0000.github.io/usako-and-kameko/",
+    title: "Usako & Kameko — Storyboard",
+    caption:
+      "A journey through the forest after the rain.\nTheir day is woven into 81 scenes of quiet moments and emotion."
   },
   {
     src: "./thumbnail/usako_diary.webp",
     thumb: "./thumbnail/usako_diary.webp",
     href: "./usako_diary/index.html",
-    title: "ウサ子の日常 ― Single Scene",
-    caption: "ごはん、散歩、ひとやすみ。小さな幸せが詰まったウサ子の一日。"
+    title: "Usako's Daily Life — Single Scene",
+    caption:
+      "Meals, walks, and little breaks.\nA day filled with the small joys Usako treasures."
   },
   {
     src: "./thumbnail/kameko_diary.webp",
     thumb: "./thumbnail/kameko_diary.webp",
     href: "./kameko_diary/index.html",
-    title: "カメコの日常 ― Single Scene",
-    caption: "今日も筆を取る。カメコの日常は、静かな制作の時間。"
+    title: "Kameko's Daily Life — Single Scene",
+    caption:
+      "Today again, she picks up her brush.\nKameko's days unfold in calm, focused hours of creation."
   }
 ];
 
@@ -34,7 +37,6 @@ function createSlider(mount, slides = []){
   const title  = mount.querySelector(".sld__title");
   const capEl  = mount.querySelector("#caption");
 
-  // slides -> DOM
   track.innerHTML = slides.map(s => `
     <div class="sld__slide">
       ${s.href ? `<a class="sld__link" href="${s.href}">` : `<span class="sld__link">`}
@@ -43,14 +45,20 @@ function createSlider(mount, slides = []){
     </div>
   `).join("");
 
-  dots.innerHTML = slides.map((_, i) => `<button class="sld__dot" data-i="${i}" aria-label="Go to slide ${i+1}"></button>`).join("");
-  thumbs.innerHTML = slides.map((s, i) => `
-    <button class="sld__th" data-i="${i}" aria-label="Preview ${i+1}">
-      <img src="${s.thumb || s.src}" alt="">
-    </button>
-  `).join("");
+  dots.innerHTML = slides
+    .map((_, i) => `<button class="sld__dot" data-i="${i}" aria-label="Go to slide ${i+1}"></button>`)
+    .join("");
+
+  thumbs.innerHTML = slides
+    .map((s, i) => `
+      <button class="sld__th" data-i="${i}" aria-label="Preview ${i+1}">
+        <img src="${s.thumb || s.src}" alt="">
+      </button>
+    `)
+    .join("");
 
   let idx = 0, n = slides.length;
+
   function update(i){
     if (!n) return;
     idx = (i + n) % n;
@@ -61,7 +69,6 @@ function createSlider(mount, slides = []){
     capEl.textContent = slides[idx]?.caption || "";
   }
 
-
   dots.addEventListener("click", (e)=>{
     const b = e.target.closest(".sld__dot"); if(!b) return;
     update(parseInt(b.dataset.i,10));
@@ -71,7 +78,6 @@ function createSlider(mount, slides = []){
     update(parseInt(b.dataset.i,10));
   });
 
-  // drag/swipe (avoid hijacking <a> click)
   let sx=null, anchor=null;
   track.addEventListener("pointerdown", (e)=>{
     anchor = e.target.closest("a");
@@ -93,5 +99,4 @@ function createSlider(mount, slides = []){
   return {update};
 }
 
-// init
 createSlider(document.getElementById("work-slider"), slides);

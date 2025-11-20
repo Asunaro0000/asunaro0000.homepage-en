@@ -1,20 +1,20 @@
 <!doctype html>
-<html lang="ja">
+<html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>リリと楓の Happy Halloween! パノラマ | Asunaro Works</title>
+  <title>Lili & Kaede — Happy Halloween! Panorama | Asunaro Works</title>
 
-  <!-- 共通ヘッダー / ベーススタイル -->
+  <!-- Global header / base styles -->
   <link rel="stylesheet" href="../../../css/header.css">
   <link rel="stylesheet" href="../../../css/style.css">
 
-  <!-- このページ専用CSS -->
+  <!-- Page-specific CSS -->
   <link rel="stylesheet" href="./css/panorama.css">
 </head>
 <body>
 
-  <!-- 共通ヘッダー -->
+  <!-- Global header -->
   <header class="nav">
     <a class="brand" href="../../../">Asunaro Works</a>
     <nav aria-label="Primary">
@@ -28,48 +28,47 @@
   </header>
 
 <main class="pano-container">
-  <h1>リリと楓の Happy Halloween! パノラマギャラリー</h1>
+  <h1>Lili & Kaede — Happy Halloween! Panorama Gallery</h1>
+
   <p class="pano-lead">
-    3つのハロウィンストーリーを楽しめるパノラマ展示です。<br>
-    画像をクリック／スワイプで進めます。
+    A panoramic exhibition featuring three Halloween stories.<br>
+    Click or swipe to move through each scene.
   </p>
 
-  <!-- タブ -->
+  <!-- Tabs -->
   <div class="pano-tabs" role="tablist" aria-label="Panorama sets">
     <button class="pano-tab is-active" type="button" data-pano-set="1">Room 1</button>
     <button class="pano-tab" type="button" data-pano-set="2">Room 2</button>
     <button class="pano-tab" type="button" data-pano-set="3">Room 3</button>
-  <button id="bgmToggle" class="pano-bgm-btn" type="button">
-    BGM: OFF
-  </button>
+    <button id="bgmToggle" class="pano-bgm-btn" type="button">
+      BGM: OFF
+    </button>
   </div>
 
-  <!-- パノラマ本体（1つだけ） -->
+  <!-- Panorama body -->
   <section class="panorama-wrap">
     <div class="panorama" id="panorama"></div>
   </section>
 
-  <!-- 終端ボタン -->
+  <!-- End button -->
   <div class="pano-goto">
     <a id="panoGotoBtn" class="pano-goto__btn pano-disabled" href="#">
       
     </a>
   </div>
 
-  <!-- BGM本体 -->
+  <!-- BGM -->
   <audio id="bgmAudio" preload="auto" loop></audio>
 </main>
 
-<!-- BGM制御（今までの） -->
+<!-- Scripts -->
 <script src="./js/bgm.js"></script>
-<!-- パノラマ（新しい3構成版） -->
 <script src="./js/panorama.js"></script>
-<!-- 共通ナビ -->
 <script type="module" src="../../../js/extensions/nav-toggle.js"></script>
 
-  <footer>
-    <span>© 2025 Asunaro Works. All rights reserved.</span>
-  </footer>
+<footer>
+  <span>© 2025 Asunaro Works. All rights reserved.</span>
+</footer>
 
 </body>
 </html>

@@ -4,69 +4,70 @@ const $$ = (s, r=document) => Array.from(r.querySelectorAll(s));
 
 // 画像ごとに個別キャプションを設定
 const items = [
-  { src: './images/1.webp', title: '葉を記す朝',
-    caption: '札を確かめる指先に淡い色が落ちる。瓶を前にした朝の作業が、ひと区切りの気配を帯びていた。' },
+  { src: './images/1.webp', title: 'Morning of Pressed Leaves',
+    caption: 'A faint color falls onto her fingertips as she checks each tag. The morning task before the jars carries a gentle sense of completion.' },
 
-  { src: './images/2.webp', title: '月を見上げる窓辺',
-    caption: 'マフラーに指先を添え、夜空へそっと視線を上げる。月の明かりが窓辺を満たし、静けさが深く息づいていた。' },
+  { src: './images/2.webp', title: 'Moonlit Window',
+    caption: 'With her fingers resting on the scarf, she lifts her gaze toward the night sky. Moonlight fills the window, breathing depth into the silence.' },
 
-  { src: './images/3.webp', title: '書きかけの頁',
-    caption: '綴りかけの文字の前で筆が止まる。開いたノートに、積まれた本の影が静かに伸びていた。' },
+  { src: './images/3.webp', title: 'A Page Half Written',
+    caption: 'Her brush pauses above the unfinished words. Shadows from the stacked books stretch quietly across the open notebook.' },
 
-  { src: './images/4.webp', title: '夜の瓶棚',
-    caption: 'ふたを閉じる指先に、外の夜色がそっと寄り添う。棚の瓶が、眠る種をほのかに映していた。' },
+  { src: './images/4.webp', title: 'Shelves of Night',
+    caption: 'The night outside settles softly onto her fingertips as she closes the lid. The jars reflect the faint glimmer of the sleeping seeds within.' },
 
-  { src: './images/5.webp', title: '灯りと地図の部屋',
-    caption: '地図を広げた机に灯がともる。紙面の起伏が浮かび上がり、静かに道筋を示していた。' },
+  { src: './images/5.webp', title: 'Room of Lamps and Maps',
+    caption: 'A lamp lights the desk where the map is spread. The paper’s ridges rise gently, revealing a quiet path beneath the glow.' },
 
-  { src: './images/6.webp', title: '二人の作業台',
-    caption: '筆を取る母の手元に寄り添うようにして見守る。柔らかな光がふたりの間に静かな温度を残していた。' },
+  { src: './images/6.webp', title: 'The Shared Worktable',
+    caption: 'She watches closely beside her mother’s hands as the brush begins to move. Warm light leaves a gentle temperature between the two of them.' },
 
-  { src: './images/7.webp', title: 'うたた寝の午後',
-    caption: '本に顔を寄せたまま深い息が落ちる。温かさの残るカップが、ゆっくりと午後の時間を支えていた。' },
+  { src: './images/7.webp', title: 'An Afternoon Doze',
+    caption: 'Her breath deepens as she drifts off with her face near the book. A cup still holding warmth supports the quiet flow of the afternoon.' },
 
-  { src: './images/8.webp', title: '秋の調合机',
-    caption: '色づく外の景色を眺めながら記録を整える。木の道具たちが、秋の静かな気配を受け止めていた。' },
+  { src: './images/8.webp', title: 'Autumn Mixing Desk',
+    caption: 'She organizes her notes while watching the changing colors outside. Wooden tools absorb the soft presence of autumn.' },
 
-  { src: './images/9.webp', title: '図書室の片隅で',
-    caption: '本を開いて一歩止まる。障子越しの光が文字の輪郭をやわらかく浮かべていた。' },
+  { src: './images/9.webp', title: 'In the Corner of the Library',
+    caption: 'She pauses with the book open. Light through the shoji gently reveals the outline of each character.' },
 
-  { src: './images/10.webp', title: '本棚の通路で',
-    caption: '並ぶ背表紙の間を抜けながら振り返る。赤いマフラーが空気を切るように揺れていた。' },
+  { src: './images/10.webp', title: 'Between the Bookshelves',
+    caption: 'She glances back while walking between the rows of spines. Her red scarf sways, slicing lightly through the air.' },
 
-  { src: './images/11.webp', title: '木漏れ日の机',
-    caption: '外から吹き込む風にページがかすかに揺れ、木々の影が紙面に軽い模様を描いていった。' },
+  { src: './images/11.webp', title: 'Desk of Sunlit Leaves',
+    caption: 'The breeze from outside stirs the page gently. Shadows of the trees draw light patterns across the paper.' },
 
-  { src: './images/12.webp', title: 'ランプの光と紙の音',
-    caption: '指先で原稿をなぞると、紙が静かに鳴る。夜の明かりが手元に深みを与えていた。' },
+  { src: './images/12.webp', title: 'Lamplight and Paper',
+    caption: 'Tracing the manuscript with her fingertips, the paper gives a soft sound. Night light deepens the atmosphere around her hands.' },
 
-  { src: './images/13.webp', title: '地図の部屋',
-    caption: '壁に掛けられた地図をなぞる。揺れる蝋燭の明かりが古い紙の表情をゆっくり変えていった。' },
+  { src: './images/13.webp', title: 'The Map Room',
+    caption: 'She follows the lines of the wall-mounted map. Candlelight shifts slowly, changing the expression of the old paper.' },
 
-  { src: './images/14.webp', title: '葉影の机',
-    caption: '本を開いたまま視線を止める。窓辺の蔦が揺れ、午後の空気に淡い影を落としていた。' },
+  { src: './images/14.webp', title: 'Desk in Leaf-Shadow',
+    caption: 'Her gaze pauses on the open book. Ivy sways by the window, casting faint shadows in the afternoon air.' },
 
-  { src: './images/15.webp', title: '光る瓶の棚',
-    caption: '棚の瓶に触れると、内部の色がきらりと返る。小さな輝きが部屋にやわらかな余韻を広げていた。' },
+  { src: './images/15.webp', title: 'Shelf of Shimmering Bottles',
+    caption: 'When she touches a bottle, its inner color flickers softly. The small glow spreads a quiet aftertone across the room.' },
 
-  { src: './images/16.webp', title: '本を抱える夕暮れ',
-    caption: '胸に抱えた本の重みがじんわり伝わる。夕の明かりが木の香りをそっと引き立てていた。' },
+  { src: './images/16.webp', title: 'Holding Books at Dusk',
+    caption: 'The weight of the books warms her arms. Evening light gently brings out the scent of the wooden shelves.' },
 
-  { src: './images/17.webp', title: '窓辺で森を見渡す',
-    caption: '手帳を置き、緑へ視線を向ける。朝の風が葉をゆっくり揺らし、一日の気配を整えていた。' },
+  { src: './images/17.webp', title: 'Looking Over the Forest',
+    caption: 'She sets down her notebook and looks toward the greenery. The morning wind stirs the leaves, preparing the rhythm of the new day.' },
 
-  { src: './images/18.webp', title: 'ガラス棚の前で',
-    caption: '瓶のラベルを確かめるたび、陽の反射が淡い色を生んでいく。室内に穏やかな温度が満ちていた。' },
+  { src: './images/18.webp', title: 'In Front of the Glass Cabinet',
+    caption: 'Each time she checks a label, sunlight reflects and creates soft colors. A calm warmth fills the room little by little.' },
 
-  { src: './images/19.webp', title: '朝の記録帳',
-    caption: '開いたノートに静かに書き込む。湯気の立つ茶杯が、始まりの時間をそっと支えてくれた。' },
+  { src: './images/19.webp', title: 'Morning Record Book',
+    caption: 'She writes quietly in the open notebook. A cup of steaming tea gently supports the beginning of her morning.' },
 
-  { src: './images/20.webp', title: '森の図書廊下',
-    caption: '光の模様が床に伸びる廊下をゆっくり進む。棚の端に置かれた紙片が、静けさの中で白く際立っていた。' },
+  { src: './images/20.webp', title: 'Library Hall of the Forest',
+    caption: 'She walks slowly down the corridor where patterns of light stretch across the floor. A small slip of paper on the shelf gleams softly in the stillness.' },
 
-  { src: './images/21.webp', title: '小瓶の調合台',
-    caption: '小瓶を傾けて色を確かめる。薬草と器具の並びが、朝の作業の始まりを静かに知らせていた。' },
+  { src: './images/21.webp', title: 'Mixing Table of Small Bottles',
+    caption: 'Tilting a small bottle, she examines the color. The herbs and tools neatly arranged signal the quiet start of the day’s work.' }
 ];
+
 
 
 const gallery = $("#cardGallery");

@@ -2,14 +2,18 @@
 const STAMP_PATH_2 = "./stamps2/";
 
 // ファイル名（拡張子なし）。1つ目と同じ配列を使い回すならコピペでOK
-const stampNames2 = [
-  "おやつ日和！","りんごタイム♪","ほっぺが落ちそう〜♡","香ばしいっ！","甘党ばんざい！",
-  "花よりだんご♪","できたてだよっ！","野菜も好きっ！","あま〜い幸せ🍯","ほっと一息〜☕","あったかいね☕",
-  "あまやか時間～","秋でもアイス！","あま〜い幸せ🍰","ほっとミルク♪","あったまるぅ〜🍲","分けっこしよっ🥕",
-  "秋のごほうび🍊","これ、ぜんぶリス子の！？✨","秋のごほうび♡","あったか夜ごはん🌙","できたてタルトです♪",
-  "おべんとう〜！","ほっとするね🦉","ピクニック日和🍞","しあわせ暴走中！🥞",
-];
 
+const stampNames2 = [
+  "Snack time!", "Apple time♪", "So tasty!", "So toasty!", "Sweet tooth wins!",
+  "Food over flowers♪", "Freshly made!", "I like veggies too!", "Sweet happiness🍯",
+  "A cozy break☕", "Nice and warm☕",
+  "Spoil-me time", "Ice even in autumn!", "Sweet bliss🍰", "Warm milk♪",
+  "Feeling toasty🍲", "Lets share🥕",
+  "Autumn treat🍊", "All this is mine!✨", "My autumn reward♡",
+  "Warm dinner night🌙", "Freshly baked tart♪",
+  "Lunch time!", "So comforting🦉", "Perfect picnic day🍞",
+  "Happiness overload!🥞",
+];
 // 要素取得（※ここが1つ目と違う）
 const wrap2 = document.getElementById("risuko-stamp-2");
 const img2  = document.getElementById("risuko-stamp-img-2");

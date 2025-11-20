@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="ja">
+<html lang="en">
 <head>
   <!-- GitHub Pages（プロジェクトサイト）用：必ず最初に置く -->
   <!-- <base href="/asunaro0000.homepage/">-->
@@ -28,12 +28,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@600&display=swap" rel="stylesheet">
 
-  
-
-
   <script src="https://unpkg.com/js-yaml@4.1.0/dist/js-yaml.min.js"></script>
-
-  <!-- 共通の簡易スタイル -->
 
 </head>
 
@@ -52,32 +47,32 @@
 
   <main class="section">
 
-    <!-- ▼ 1. ブランドタイトル（でかいHero） -->
-  <section class="hero">
-    <div class="hero-inner">
-      <h1>絵にコードを添える</h1>
-      <p class="lead">―― インタラクティブ・アートの世界へ ――</p>
-      <a class="btn-enter" href="gallery/">ENTER</a>
-    </div>
-  </section>
+    <!-- ▼ 1. Hero -->
+    <section class="hero">
+      <div class="hero-inner">
+        <h1>Add Code to Your Art</h1>
+        <p class="lead">―― Welcome to the Interactive Art World ――</p>
+        <a class="btn-enter" href="gallery/">ENTER</a>
+      </div>
+    </section>
 
-
-    <!-- ▼ 2. リス子 ＋ バナー（PCで2カラム / SPで縦） -->
+    <!-- ▼ 2. Risuko + Banner -->
     <section class="feature-row">
 
-      <!-- 左：メイン（リス子） -->
+      <!-- Left: Risuko -->
       <div class="feature-row__col feature-row__col--main">
         <section class="risuko"></section>
         <div class="risuko-wrap">
           <div id="risuko-dynamic" aria-live="polite">
-            <!-- Aモード (risuko-stamp.js が使うID) -->
+
+            <!-- A mode -->
             <div id="risuko-stamp" class="risuko-stamp" aria-hidden="false">
               <img id="risuko-stamp-img" src="" alt="Risuko of the day">
               <p id="risuko-stamp-text" class="risuko-caption"></p>
               <button id="risuko-stamp-btn" class="risuko-btn" type="button">tap to change</button>
             </div>
 
-            <!-- Bモード (risuko-stamp2.js が使うID) -->
+            <!-- B mode -->
             <div id="risuko-stamp-2" class="risuko-stamp is-hidden" aria-hidden="true">
               <img id="risuko-stamp-img-2" src="" alt="Risuko alternate">
               <p id="risuko-stamp-text-2" class="risuko-caption"></p>
@@ -85,19 +80,19 @@
             </div>
           </div>
 
-          <!-- リス子表示切替ボタン -->
+          <!-- Mode switch controls -->
           <div class="controls" style="display:flex;gap:12px;justify-content:center;margin-top:8px">
-            <button id="prevMode" class="ctrl" type="button" aria-label="前の表示" style="width:34px;height:34px;border:none;border-radius:8px;background:#ffd86a;color:#333;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 14px rgba(0,0,0,.35);">
+            <button id="prevMode" class="ctrl" type="button" aria-label="Previous" style="width:34px;height:34px;border:none;border-radius:8px;background:#ffd86a;color:#333;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 14px rgba(0,0,0,.35);">
               <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M15.41 7.41 14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
             </button>
-            <button id="nextMode" class="ctrl" type="button" aria-label="次の表示" style="width:34px;height:34px;border:none;border-radius:8px;background:#ffd86a;color:#333;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 14px rgba(0,0,0,.35);">
+            <button id="nextMode" class="ctrl" type="button" aria-label="Next" style="width:34px;height:34px;border:none;border-radius:8px;background:#ffd86a;color:#333;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 14px rgba(0,0,0,.35);">
               <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M8.59 16.59 13.17 12 8.59 7.41 10 6l6 6-6 6z"/></svg>
             </button>
           </div>
         </div>
       </div>
 
-      <!-- 右：サイド（自動送りバナー） -->
+      <!-- Right: Auto Banner -->
       <div class="feature-row__col feature-row__col--side">
         <section class="top-banner">
           <div class="top-banner__image-wrap">
@@ -110,7 +105,7 @@
 
           <div class="top-banner__text">
             <p id="bannerCaption" class="top-banner__caption">
-              ウサ子とカメコの日常、一枚絵のギャラリーを公開しました。
+              The daily life of Usako & Kameko — a new gallery is now available.
             </p>
 
             <a
@@ -118,43 +113,37 @@
               class="top-banner__btn"
               href="./gallery/Usako_and_Kameko/"
             >
-              ▶ ウサ子とカメコの日常へ
+              ▶ Visit Usako & Kameko Gallery
             </a>
 
-            <!-- 何枚あるかのランプ（ドット） -->
-            <div class="top-banner__dots" id="bannerDots" aria-label="バナーの位置インジケーター"></div>
+            <div class="top-banner__dots" id="bannerDots" aria-label="Banner position indicator"></div>
           </div>
         </section>
       </div>
     </section>
 
-    <!-- ▼ 3. サイトマップ（森マップ） -->
+    <!-- ▼ 3. Forest Map -->
     <section class="sitemap-section">
       <h2>Site Map – Forest Map</h2>
       <p class="sitemap-text">
-        Asunaro Works のシリーズを、森の小道をたどる地図としてまとめたインデックスページです。<br>
-        「CyberCats」「PrismCat」「Risuko」「Usako &amp; Kameko」など、作品ごとの入り口を一覧できます。
+        This index page maps the Asunaro Works series as a forest trail.<br>
+        You can explore each entrance such as “CyberCats”, “PrismCat”, “Risuko”, and “Usako & Kameko”.
       </p>
       <a class="sitemap-btn" href="./sitemap/">
         🗺️ Open Forest Map
       </a>
     </section>
 
-    <!-- ▼ 4. お知らせ -->
+    <!-- ▼ 4. News -->
     <section class="news">
-      <h2>お知らせ</h2>
+      <h2>News</h2>
       <ul>
-        <li><strong>2025-11-19：</strong> 森の契約更新譚の背景美術資料室「森の営み」を公開しました。</li>
-        <li><strong>2025-11-19：</strong> 森の契約更新譚の「精霊の森」を公開しました。</li>
-        <li><strong>2025-11-18：</strong> サイトマップ、及びバナーを追加しました。</li>
-        <li><strong>2025-11-18：</strong> リリと楓「ハロウィンのパノラマギャラリー」を公開しました。</li>
-        <li><strong>2025-11-18：</strong> リス子「パノラマギャラリー」を公開しました。</li>
-        <li><strong>2025-11-14：</strong> 森の契約更新譚の背景美術「栞の森」を公開しました。</li>
-<!--    <li><strong>2025-11-14：</strong> ウサ子とカメコの日常を切り取った一枚絵を公開しました。</li>
-        <li><strong>2025-11-12：</strong> 「食欲の秋リス子」登場！左右のボタンではスタンプに切り替わります🐿️</li>
-        <li><strong>2025-11-11：</strong> リス子の小屋のストーリーボード、ブラウザ版を追加。BGM+動画追加。</li>
-        <li><strong>2025-11-9：</strong> トップに「リス子スタンプ」登場。クリックすると表情が変わります🐿️</li>
-        <li><strong>2025-11-9：</strong> ウサ子とカメコ、森の契約更新譚のページに作品ページを開くのボタンを追加。html閲覧対応、BGM追加、森の契約更新譚の動画追加</li>-->
+        <li><strong>2025-11-19:</strong> Released “Forest Activity Room”, the background art archive of <em>Renewal of the Forest Covenant</em>.</li>
+        <li><strong>2025-11-19:</strong> Published “Spirit Forest” from <em>Renewal of the Forest Covenant</em>.</li>
+        <li><strong>2025-11-18:</strong> Added site map and top banner.</li>
+        <li><strong>2025-11-18:</strong> Released Lili & Kaede “Halloween Panorama Gallery”.</li>
+        <li><strong>2025-11-18:</strong> Released Risuko “Panorama Gallery”.</li>
+        <li><strong>2025-11-14:</strong> Released “Shiori no Mori”, background art from <em>Renewal of the Forest Covenant</em>.</li>
       </ul>
     </section>
 
@@ -164,7 +153,7 @@
     <span>© 2025 Asunaro Works. All rights reserved.</span>
   </footer>
 
-  <!-- ▼ スクリプト群 -->
+  <!-- ▼ Scripts -->
   <script type="module" src="./js/extensions/nav-toggle.js"></script>
   <script src="./js/extensions/risuko-stamp2.js" defer></script>
   <script src="./js/extensions/risuko-stamp.js" defer></script>

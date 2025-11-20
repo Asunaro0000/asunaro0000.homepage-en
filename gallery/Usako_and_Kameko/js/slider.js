@@ -7,7 +7,7 @@ const slides = [
   {
     src: "./thumbnail/usako_and_kameko.webp",
     thumb: "./thumbnail/usako_and_kameko.webp",
-    href: "https://asunaro0000.github.io/usako-and-kameko/",
+    href: "https://asunaro-0000.itch.io/usako-kameko-between-motion-and-stillness",
     title: "Usako & Kameko — Storyboard",
     caption:
       "A journey through the forest after the rain.\nTheir day is woven into 81 scenes of quiet moments and emotion."

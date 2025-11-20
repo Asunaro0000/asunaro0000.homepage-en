@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="en">
 <head>
     <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-1NCR09VMKR"></script>
@@ -14,28 +14,25 @@
   <title>CyberCats | Asunaro Works</title>
   <link rel="stylesheet" href="../../css/header.css">
   <link rel="stylesheet" href="../../css/style.css">
-  <!-- ページ固有 -->
+  <!-- Page-specific CSS -->
   <link rel="stylesheet" href="cybercats.css">
 
 
-
-
-  <!-- headの先頭に入れる：galleryでもaboutでも同じでOK -->
+  <!-- Base-path auto detection -->
 <script>
 (function () {
-  const REPO = "asunaro0000.homepage";  // ← リポジトリ名に合わせて1箇所だけ設定
+  const REPO = "asunaro0000.homepage";  // set your repo name here
 
   function computeRootBase() {
-    // GitHub Pages上： https://username.github.io/REPO/
+    // On GitHub Pages: https://username.github.io/REPO/
     if (location.hostname.endsWith("github.io")) {
       return `https://${location.hostname}/${REPO}/gallery/CyberCats/`;
     }
-    // ローカル or 別ホスト：URLパスの中から REPO/ までを抜き出す
+    // Local or other host
     const href = location.href.replace(/\\/g, "/");
     const m = href.match(new RegExp(`^(.*?/${REPO}/)`));
     if (m) return m[1];
-    // それでも見つからないときの最後の保険（同階層）
-    return "./";
+    return "./";  // fallback
   }
 
   const root = computeRootBase();
@@ -45,12 +42,9 @@
     document.head.prepend(base);
   }
   base.href = root;
-  // 開発確認用
   console.log("[base] =>", root);
 })();
 </script>
-
-
 
 </head>
 <body data-page="cybercats">
@@ -63,15 +57,13 @@
       <a href="../../contact/">Contact</a>
       <a href="../../link/">Link</a>
       <a href="../../sitemap/">Sitemap</a>
-
-      <!-- 作品個別リンクを付けたい場合は下を使う（任意）
-      <a href="../link/">Link</a>
-      -->
+      <a href="https://asunaro0000.github.io/asunaro0000.homepage/gallery/CyberCats/">🌐 JP</a>
+      
     </nav>
   </header>
 
   <main class="wrap">
-    <!-- 動画：mp4直再生（広告なし） -->
+    <!-- Video -->
 <section class="section">
   <div class="video-container">
     <video class="video" id="cybercatsVideo" controls playsinline muted preload="metadata" style="max-width:100%">
@@ -85,7 +77,7 @@
 
 <script>
   (function(){
-    // baseURIをもとに最終的な動画URLを解決
+    // Resolve baseURI for video path
     const src = new URL("assets/video/cybercats_preview.mp4", document.baseURI).href;
     document.getElementById("videoSource").src = src;
     console.log("[video path] =>", src);
@@ -93,77 +85,76 @@
 </script>
 
 
-    <!-- 外部リンク -->
+    <!-- External link -->
     <section class="section info highlight-title">
       <h2>Cyber Cat Battle</h2>
       <p>
-        <a href="https://asunaro0000.github.io/cyber-cat-battle/" target="_blank" rel="noopener">
-          https://asunaro0000.github.io/cyber-cat-battle/
+        <a href="https://asunaro-0000.itch.io/cyber-cat-battle" target="_blank" rel="noopener">
+          https://asunaro-0000.itch.io/cyber-cat-battle
         </a>
       </p>
     </section>
 
-    <!-- 作品説明（ポップ調） -->
+    <!-- Game description -->
     <section class="section info">
-      <h2>作品の説明</h2>
+      <h2>About This Work</h2>
       <p>
-        CyberCats は、AIが描いたキャラクター＆背景＆UIだけで作った、シンプル操作のターン制バトル！<br>
-        攻撃・スキル・防御・回避…見た目も動きもサイバーに決めて、ド派手なバトル演出を楽しもう。<br>
-        スマートフォンは横画面用です。
+        CyberCats is a simple turn-based battle game made entirely with AI-generated characters, backgrounds, and UI assets.<br>
+        Attack, use skills, defend, evade—unleash flashy cyber-style effects and enjoy fast, stylish battles.<br>
+        Best experienced in landscape mode on smartphones.
       </p>
     </section>
 
-    <!-- 操作方法 -->
+    <!-- How to Play -->
     <section class="section info">
-      <h2>操作方法</h2>
+      <h2>How to Play</h2>
 
-      <h3>⏱ 1分で遊び方マスター！</h3>
+      <h3>⏱ Master the basics in 1 minute!</h3>
       <p class="lead">
-        Lv.1〜5の敵を順に倒して、最終ボスを撃破！<br>
-        クリアするとアルバムが解放されます。
+        Defeat enemies from Lv.1 to Lv.5 and take down the final boss!<br>
+        Clearing the game unlocks the Album.
       </p>
 
-      <h3>🔄 バトルの流れ</h3>
+      <h3>🔄 Battle Flow</h3>
       <ul class="list">
-        <li>毎ターン <strong>エナジー+3</strong>（最大10）</li>
-        <li>行動を<strong>1つ選択</strong>（エナジーを消費）</li>
-        <li>敵の反撃！ただし<strong>回避成功</strong>でノーダメ✨</li>
+        <li>Each turn: <strong>+3 Energy</strong> (max 10)</li>
+        <li>Select <strong>one action</strong> (consumes Energy)</li>
+        <li>Enemy counterattacks — but if <strong>Evade succeeds</strong>, you take no damage ✨</li>
       </ul>
 
-      <h3>🪄 行動一覧（コスト / 効果）</h3>
+      <h3>🪄 Action List (Cost / Effect)</h3>
 
-      <!-- アイコン画像（埋め込みスペース） -->
       <div class="icon-gallery">
-       
-        <img src="assets/img/action_icons.png" alt="行動アイコン一覧">
-        <p>アイコンの説明：左から攻撃、スキル、防御、回避、特殊スキル、必殺技</p>
+        <img src="assets/img/action_icons.png" alt="Action icon list">
+        <p>Icons from left: Attack, Skill, Guard, Evade, Special Skill, Ultimate</p>
       </div>
 
       <ul class="list">
-        <li>攻撃（2）：標準攻撃</li>
-        <li>スキル（4）：強力な一撃！</li>
-        <li>防御（0）：受けるダメージを30%カット</li>
-        <li>回避（2）：成功→敵攻撃なし＋エナジー全回復 / 失敗→被ダメ1.2倍😨</li>
-        <li>特殊スキル（5）：キャラ固有バフ（例：与ダメ2倍 / 被ダメ0 など）</li>
-        <li>必殺技（6）：HP25%以下で覚醒演出🔥</li>
-        <p>※（ ）はエナジー消費量</p>
+        <li>Attack (2): Standard attack</li>
+        <li>Skill (4): A powerful strike!</li>
+        <li>Guard (0): Reduces incoming damage by 30%</li>
+        <li>Evade (2): Success → No enemy attack + Energy fully restored / Fail → 1.2× damage 😨</li>
+        <li>Special Skill (5): Unique character buff (e.g., 2× damage dealt, 0 damage taken, etc.)</li>
+        <li>Ultimate (6): Triggered when HP falls below 25% — dramatic awakening! 🔥</li>
+        <p>※ Numbers in parentheses indicate Energy cost.</p>
       </ul>
 
-      <h3>⚔️ 進行・勝敗</h3>
+      <h3>⚔️ Progress & Victory</h3>
       <ul class="list">
-        <li>Lv.1〜4撃破 → 自動で次の敵へ（HP全回復）</li>
-        <li>Lv.5撃破 → エンディング＆アルバム解放</li>
-        <li>全員倒れるとゲームオーバー</li>
+        <li>Defeat Lv.1–4 → Automatically move to next enemy (HP fully restored)</li>
+        <li>Defeat Lv.5 → Ending + Album unlocked</li>
+        <li>If all allies fall → Game Over</li>
       </ul>
 
-      <h3>👀 画面の見方</h3>
+      <h3>👀 Screen Overview</h3>
       <ul class="list">
-        <li>上段：バトル画面（敵：左／プレイヤー：右）</li>
-        <li>下段：行動ボタン・エナジー・戦闘ログ</li>
-        <li>上部ボタン：キャラ変更／リロード／降参／アルバム</li>
+        <li>Top: Battle screen (Enemy: left / Player: right)</li>
+        <li>Bottom: Action buttons, Energy, Battle log</li>
+        <li>Top buttons: Change character / Reload / Surrender / Album</li>
       </ul>
     </section>
   </main>
+
   <script type="module" src="../../js/extensions/nav-toggle.js"></script>
 
   <footer>© 2025 Asunaro Works. All rights reserved.</footer>

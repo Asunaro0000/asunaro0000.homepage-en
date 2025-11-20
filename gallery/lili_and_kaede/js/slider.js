@@ -8,7 +8,7 @@ const slides = [
   {
     src: "./thumbnail/kv01.webp",
     thumb: "./thumbnail/kv01.webp",
-    href: "https://asunaro0000.github.io/lili-and-kaede/",
+    href: "https://asunaro0000.github.io/lili-and-kaede-en/",
     title: "Lili & Kaede — Happy Halloween Storyboard",
     caption: "Follow their night of pure Halloween fun through a sequence of illustrated storyboard moments."
   },

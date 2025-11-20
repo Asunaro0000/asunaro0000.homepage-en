@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="ja">
+<html lang="en">
 <head>
     <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-1NCR09VMKR"></script>
@@ -14,7 +14,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1"/>
   <title>PrismCat Memory | Asunaro Works</title>
 
-  <!-- このページは /gallery/prismcat/ 配下なので、サイト共通CSSは ../../ で参照 -->
+  <!-- This page is under /gallery/prismcat/, so shared CSS is referenced with ../../ -->
   <link rel="stylesheet" href="../../../css/style.css"/>
   <link rel="stylesheet" href="../../../css/header.css">
 
@@ -30,6 +30,7 @@
       <a href="../../contact/">Contact</a>
       <a href="../../link/">Link</a>
       <a href="../../sitemap/">Sitemap</a>
+      <a href="https://asunaro0000.github.io/asunaro0000.homepage/gallery/prismcat/">🌐 JP</a>
     </nav>
   </header>
 
@@ -43,34 +44,31 @@
   <script type="module">
     import { loadYAML } from '../../js/util/yaml-loader.js';
 
-    /** 現在ページの深さから、プロジェクト直下を基準に相対URLを作る */
+    /** Build a relative URL based on current directory depth */
     function relToRoot(p){
       if (!p) return p;
-      p = String(p).replace(/^\/+/, ''); // 先頭スラッシュ剥がし（/assets/... も受ける）
+      p = String(p).replace(/^\/+/, '');
       const path = location.pathname.replace(/index\.html$/,'');
       const depth = Math.max(path.split('/').filter(Boolean).length - 1, 0);
       return (depth ? '../'.repeat(depth) : './') + p;
     }
 
-    /** この作品フォルダ（/gallery/prismcat/）からの相対に直す */
+    /** Convert to relative path inside this work (/gallery/prismcat/) */
     function relToWork(p){
       if (!p) return p;
       p = String(p).replace(/^\/+/, '');
-      // 作品のassetsが gallery/prismcat/assets にある前提なので、
-      // assets/ で始まる場合は './assets/...' にマップする
       if (p.startsWith('assets/')) return './' + p;
-      // それ以外（gallery/prismcat/phase-x/ など）はそのまま相対で使う場合もある
       return p;
     }
 
     (async ()=>{
-      // YAML は data/series/prismcat.yaml（プロジェクト直下）
+      // YAML at data/series/prismcat.yaml
       const data = await loadYAML('../../data/series/prismcat.yaml');
       const s = data.series;
 
-      // カバー（YAMLが assets/... or /assets/... でもOK）
+      // Cover image
       const cover = s.cover || (s.phases?.[0]?.hero ?? '');
-      const heroImg = relToWork(cover) || relToRoot(cover); // まず作品内assets優先、無ければプロジェクト直下
+      const heroImg = relToWork(cover) || relToRoot(cover);
 
       const hero = document.getElementById('series-hero');
       hero.innerHTML = `
@@ -81,12 +79,11 @@
         <p class="muted">${s.description || ''}</p>
       `;
 
-      // フェーズ一覧
+      // Phase List
       const phases = document.getElementById('phases');
       phases.innerHTML = (s.phases || []).map(p => {
         const raw = p.hero || p.background || '';
         const thumb = relToWork(raw) || relToRoot(raw);
-        // 各フェーズのページは gallery/prismcat/<phase-id>/ （共通CSSはそこからさらに ../../ が必要）
         const link  = `./${p.id}/`;
         return `
           <a class="card" href="${link}">
@@ -100,8 +97,7 @@
       }).join('');
     })();
   </script>
-  <script type="module" src="../../js/extensions/nav-toggle.js"></script>
-  
 
+  <script type="module" src="../../js/extensions/nav-toggle.js"></script>
 </body>
 </html>

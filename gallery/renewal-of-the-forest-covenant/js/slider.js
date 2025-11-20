@@ -7,7 +7,7 @@ const slides = [
   {
     src: "./thumbnail/kv01.webp",
     thumb: "./thumbnail/kv01.webp",
-    href: "https://asunaro0000.github.io/Renewal-of-the-Forest-Covenant/",
+    href: "https://asunaro-0000.itch.io/renewal-of-the-forest-covenant-inherited-customs",
     title: "Renewal of the Forest Covenant — Storyboard",
     caption: "The ancient promise dwelling in the forest stirs once more. A sequence of scenes depicting the renewal through background art and atmospheric storytelling."
   },

@@ -190,7 +190,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   img.style.cursor = "pointer";
   img.addEventListener("click", () => {
-    window.location.href = "./gallery/renewal-of-the-forest-covenant/Forest-calendar/";
+    window.location.href = "gallery/renewal-of-the-forest-covenant/Forest-calendar/";
   });
 });
 

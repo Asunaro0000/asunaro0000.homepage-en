@@ -1,0 +1,30 @@
+    .risuko-wrap{
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+      gap:12px;
+      margin-top:20px;
+    }
+    .controls{
+      display:flex;
+      gap:12px;
+      align-items:center;
+      justify-content:center;
+      margin-top:8px;
+    }
+    .ctrl{
+      width:34px;
+      height:34px;
+      border:none;
+      border-radius:8px;
+      background:#ffd86a;
+      color:#333;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      box-shadow:0 4px 14px rgba(0,0,0,.35);
+      cursor:pointer;
+    }
+    .ctrl svg{width:16px;height:16px;fill:#5a4a19;}
+.is-hidden { display: none !important; }

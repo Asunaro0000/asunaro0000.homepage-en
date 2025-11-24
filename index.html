@@ -19,6 +19,7 @@
 
   <!-- アセット -->
   <link rel="stylesheet" href="./css/header.css">
+  <link rel="stylesheet" href="./css/calendar.css">
   <link rel="stylesheet" href="./css/style.css">
   <link rel="stylesheet" href="./css/risuko-stamp.css">
   <link rel="stylesheet" href="./css/risuko-stamp2.css">
@@ -122,6 +123,46 @@
         </section>
       </div>
     </section>
+  <!-- ======================
+       2. Calendar
+  ====================== -->
+  <section id="forest-calendar" style="width:100%;max-width:960px;text-align:center;padding:0 16px;">
+
+  <h2 style="font-size:18px;margin-bottom:8px;">Seven-Day Rotating Wall Gallery</h2>
+  <p style="font-size:13px;line-height:1.7;opacity:.8;margin:0 0 18px;">
+    The wall's scenery shifts gently with each day of the week.<br>
+    This room allows you to observe the world's slow formation — its flow, structure, and quiet history.<br>
+    A fragment of the story is added every day.<br>
+    Click to enter the gallery.
+  </p>
+
+
+    <!-- working calendar -->
+<section class="calendar-strip-wrapper" style="margin-top:20px;margin-bottom:0;">
+
+  <div class="month-block">
+    <figure class="month-image-frame">
+      <img id="month-image" src="assets/calendar/1-1.webp" alt="Month illustration" loading="lazy" data-index="0" />
+    </figure>
+
+    <div class="calendar-strip">
+      <div class="strip-header">
+        <span id="strip-label" class="strip-label">Year 2026 · 1</span>
+      </div>
+
+      <div class="strip-right">
+        <div id="strip-weekdays" class="strip-row strip-weekdays"></div>
+        <div id="strip-dates" class="strip-row strip-dates"></div>
+      </div>
+
+      <div class="strip-signature">Asunaro Works</div>
+    </div>
+  </div>
+
+
+
+</section>
+
 
     <!-- ▼ 3. Forest Map -->
     <section class="sitemap-section">
@@ -139,12 +180,15 @@
     <section class="news">
       <h2>News</h2>
       <ul>
+        <li><strong>2025-11-24:</strong>
+          Released the <em>Seven-Day Rotating Wall Gallery</em> — a room where the mural shifts with each day of the week, accumulating fragments of this world's story over time.
+        </li>
         <li><strong>2025-11-19:</strong> Released “Forest Activity Room”, the background art archive of <em>Renewal of the Forest Covenant</em>.</li>
         <li><strong>2025-11-19:</strong> Published “Spirit Forest” from <em>Renewal of the Forest Covenant</em>.</li>
         <li><strong>2025-11-18:</strong> Added site map and top banner.</li>
-        <li><strong>2025-11-18:</strong> Released Lili & Kaede “Halloween Panorama Gallery”.</li>
+   <!-- <li><strong>2025-11-18:</strong> Released Lili & Kaede “Halloween Panorama Gallery”.</li>
         <li><strong>2025-11-18:</strong> Released Risuko “Panorama Gallery”.</li>
-        <li><strong>2025-11-14:</strong> Released “Shiori no Mori”, background art from <em>Renewal of the Forest Covenant</em>.</li>
+        <li><strong>2025-11-14:</strong> Released “Shiori no Mori”, background art from <em>Renewal of the Forest Covenant</em>.</li>-->
       </ul>
     </section>
 
@@ -161,5 +205,6 @@
   <script src="./js/extensions/risuko-stamp-toggle.js" defer></script>
   <script src="./js/extensions/risuko-preload.js" defer></script>
   <script src="./js/extensions/banner.js" defer></script>
+  <script src="./js/extensions/calendar.js" defer></script>
 </body>
 </html>

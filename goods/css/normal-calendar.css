@@ -1,0 +1,117 @@
+/* Calendar Viewer Base */
+.calendar-viewer {
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:16px;
+  width:100%;
+}
+
+/* Image */
+.month-image-frame {
+  width:900px;
+  background:#0b1015;
+  border-radius:6px;
+  overflow:hidden;
+}
+
+.month-image-frame img {
+  width:100%;
+  height:auto;
+  display:block;
+  object-fit:contain;
+  transition:opacity .25s ease, transform .25s ease;
+}
+
+/* Navigation Buttons */
+.calendar-nav-row {
+  display:flex;
+  justify-content:center;
+  gap:18px;
+}
+
+.nav-btn {
+  border:none;
+  background:rgba(15,23,42,.92);
+  color:white;
+  width:46px;
+  height:46px;
+  border-radius:50%;
+  cursor:pointer;
+  font-size:1.25rem;
+  box-shadow:0 6px 14px rgba(15,23,42,.45);
+  transition:.2s;
+}
+
+.nav-btn:hover {
+  background:black;
+  transform:translateY(-2px);
+}
+
+/* Responsive */
+@media(max-width:920px){
+  .month-image-frame {
+    width:100%;
+  }
+}
+
+/* ----------------------------------
+   Calendar "準備中" Overlay
+---------------------------------- */
+.pending {
+  position: relative;
+  filter: brightness(.6);
+}
+
+.pending::after {
+  content: "準備中";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  
+  font-size: 20px;
+  font-weight: 600;
+  color: rgba(255,255,255,.9);
+
+  background: rgba(0,0,0,.45);
+  padding: 8px 22px;
+  border-radius: 6px;
+  backdrop-filter: blur(3px);
+}
+
+
+/* mobile微調整 */
+@media (max-width: 600px) {
+  .pending::after {
+    font-size: 16px;
+    padding: 6px 18px;
+  }
+}
+
+
+/* Risuko Calendar - 準備中表示 */
+#risuko-calendar {
+  position: relative;
+}
+
+#risuko-calendar img {
+  filter: brightness(0.55);
+  pointer-events: none; /*クリック無効化したければ残す、不要なら消してOK*/
+}
+
+#risuko-calendar::before {
+  content: "準備中";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 20px;
+  font-weight: 600;
+  color: rgba(255,255,255,.95);
+  background: rgba(0,0,0,.45);
+  padding: 8px 20px;
+  border-radius: 6px;
+  backdrop-filter: blur(4px);
+  z-index: 5;
+}

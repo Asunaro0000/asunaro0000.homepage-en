@@ -1,0 +1,379 @@
+/* ============================
+   Reset / Base
+============================ */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "DM Sans", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+  color: #0f172a;
+}
+
+/* デモ用レイアウト（必要なければ削ってOK） */
+.page {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 32px 16px 48px;
+}
+
+.page-title {
+  text-align: center;
+  margin: 0 0 24px;
+  font-size: 1.3rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #0f172a;
+}
+
+/* ============================
+   カレンダー帯全体
+============================ */
+
+/* 上段：月画像＋カレンダー帯
+   下段：左右ボタン（PC/スマホ共通） */
+.calendar-strip-wrapper {
+  display: grid;
+  grid-template-columns: 1fr auto auto 1fr;  /* 中央2カラムにボタン */
+  grid-template-rows: auto auto;             /* 1行目：本体 / 2行目：ボタン */
+  align-items: center;
+  justify-items: center;
+  row-gap: 14px;
+  width: 100%;
+}
+
+/* 月画像＋カレンダー帯ブロック（1行目を全幅で占有） */
+.month-block {
+  grid-column: 1 / 5;
+  grid-row: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+}
+
+/* ============================
+   月の画像部分
+============================ */
+
+.month-image-frame {
+  width: 900px; /* カレンダー帯と同じ幅。変更するならここ */
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background: #0b1015;
+  border-radius: 6px 6px 0 0;
+}
+
+/* 画像は横いっぱい・縦は自動 */
+.month-image-frame img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+  aspect-ratio: auto;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+/* ============================
+   カレンダー帯（キャプチャ対象）
+============================ */
+
+.calendar-strip {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  padding: 6px 22px 8px;
+  background: linear-gradient(to bottom, #f6f3eb 0%, #e2eee0 100%);
+  border: 1px solid rgba(148, 163, 184, 0.5);
+  width: 900px;
+  display: block;
+
+  font-family: "EB Garamond", "Times New Roman", serif;
+  font-variant-numeric: tabular-nums;
+
+  position: relative;
+}
+
+/* ---------------------------
+   上段：Year 2025 · 10
+---------------------------- */
+
+.strip-header {
+  margin-bottom: 4px;
+}
+
+.strip-label {
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #4b5563;
+}
+
+/* ---------------------------
+   下段：曜日＋日付
+---------------------------- */
+
+.strip-row {
+  display: grid;
+  grid-template-columns: repeat(31, minmax(0, 1fr));
+  margin-bottom: 3px;
+}
+
+/* 曜日セル */
+.cell-w {
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-align: center;
+  color: #6b7280;
+  font-feature-settings: "tnum";
+}
+
+/* 日付セル */
+.cell-d {
+  font-size: 0.82rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  text-align: center;
+  color: #111827;
+  padding: 1px 0;
+  font-feature-settings: "tnum";
+}
+
+/* 土日カラー */
+.cell-w.sun,
+.cell-d.sun {
+  color: #b9473f;
+}
+
+.cell-w.sat,
+.cell-d.sat {
+  color: #275c96;
+}
+
+/* 余りセル（透明） */
+.cell-w.empty,
+.cell-d.empty {
+  color: transparent;
+}
+
+/* 今日の日付（控えめな丸印） */
+.cell-d.today {
+  border-radius: 999px;
+  background: rgba(249, 250, 251, 0.9);
+  box-shadow: 0 0 0 1px rgba(148, 163, 184, 0.7);
+}
+
+/* hover確認用 */
+.cell-d:hover {
+  background: rgba(15, 23, 42, 0.04);
+}
+
+/* ============================
+   署名（右上：美術館刻印スタイル）
+============================ */
+
+.strip-signature {
+  position: absolute;
+  right: 10px;
+  top: 6px;
+
+  font-family: "EB Garamond", serif;
+  font-size: 0.48rem;
+  text-transform: capitalize;
+  letter-spacing: 0.22em;
+
+  color: #5d6c81;
+  opacity: 0.68;
+
+  pointer-events: none;
+  user-select: none;
+  white-space: nowrap;
+}
+
+/* ============================
+   下のナビゲーションボタン
+============================ */
+
+/* 共通デザイン */
+.nav-btn {
+  border: none;
+  background: rgba(15, 23, 42, 0.9);
+  color: #f9fafb;
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 14px rgba(15, 23, 42, 0.45);
+  transition: background 0.18s ease,
+              transform 0.18s ease,
+              box-shadow 0.18s ease;
+}
+
+/* 下段・横並びの位置指定 */
+.nav-prev {
+  grid-column: 2;
+  grid-row: 2;
+}
+
+.nav-next {
+  grid-column: 3;
+  grid-row: 2;
+}
+
+.nav-btn:hover {
+  background: rgba(15, 23, 42, 1);
+  transform: translateY(-1px);
+  box-shadow: 0 8px 18px rgba(15, 23, 42, 0.55);
+}
+
+/* ============================
+   Responsive
+============================ */
+
+@media (max-width: 920px) {
+  .month-image-frame {
+    width: 100%;
+    border-radius: 4px 4px 0 0;
+  }
+
+  .calendar-strip {
+    width: 100%;
+  }
+
+  .strip-signature {
+    right: 6px;
+    top: 6px;
+    font-size: 0.45rem;
+  }
+}
+
+/* スマホ用：フォントと余白を全体的に縮める */
+@media (max-width: 480px) {
+  .calendar-strip {
+    padding: 4px 10px 6px;   /* 左右の余白も少し削る */
+    font-size: 0.7rem;       /* 全体の基準を小さく */
+  }
+
+  .strip-label {
+    font-size: 0.9em;        /* Year 2025 · 10 を少し縮小 */
+    letter-spacing: 0.18em;  /* 文字間も少し詰める */
+  }
+
+  .strip-row {
+    margin-bottom: 2px;
+  }
+
+  .cell-w {
+    font-size: 0.6em;        /* 曜日 */
+    letter-spacing: 0.02em;
+  }
+
+  .cell-d {
+    font-size: 0.7em;        /* 日付 */
+    padding: 0;              /* 上下の余白を削る */
+  }
+
+  .strip-signature {
+    font-size: 0.42rem;      /* 署名もちょい小さく */
+    right: 4px;
+  }
+
+  /* ボタンは少し大きめでタップしやすく */
+  .nav-btn {
+    width: 48px;
+    height: 48px;
+    font-size: 1.35rem;
+  }
+}
+/* ======================================
+   FINAL: PC/スマホ共通で下に横並びボタン固定
+======================================= */
+
+.calendar-strip-wrapper {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center;
+  gap: 14px;
+}
+
+/* ボタン行（強制横並び） */
+.calendar-nav-row {
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  width: auto;
+}
+
+/* 旧左右ボタンは完全に無効化 */
+.calendar-strip-wrapper > .nav-btn {
+  display: none !important;
+}
+
+/* 共通ボタンサイズ */
+.calendar-nav-row .nav-btn {
+  width: 44px;
+  height: 44px;
+  font-size: 1.2rem;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* スマホは少し大きめ */
+@media (max-width: 600px) {
+  .calendar-nav-row .nav-btn {
+    width: 52px;
+    height: 52px;
+    font-size: 1.35rem;
+  }
+}
+/* =========================
+   Forest Calendar - 準備中表示
+========================= */
+#forest-calendar .calendar-strip-wrapper {
+  position: relative;
+  filter: brightness(0.55);
+}
+
+/* 真ん中に「準備中」 */
+#forest-calendar .calendar-strip-wrapper::after {
+  content: "準備中";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 22px;
+  font-weight: 600;
+  color: rgba(255,255,255,.95);
+  background: rgba(0,0,0,.45);
+  padding: 10px 26px;
+  border-radius: 6px;
+  backdrop-filter: blur(4px);
+  z-index: 10;
+  pointer-events: none;
+}
+
+/* スマホ用に少し小さく */
+@media (max-width: 600px) {
+  #forest-calendar .calendar-strip-wrapper::after {
+    font-size: 16px;
+    padding: 6px 18px;
+  }
+}

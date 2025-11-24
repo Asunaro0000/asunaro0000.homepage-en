@@ -1,0 +1,92 @@
+:root {
+  --bg: #14171a;
+  --accent: #ffd76b;
+  --shadow: 0 0 25px rgba(255,215,130,.25);
+}
+
+/* ====== 均一マージンで中央揃え ====== */
+.risuko-stamp {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  /* ここを 0 にする：セクションの padding で位置決めする */
+  margin: 0 auto;
+
+  text-align: center;
+  gap: 12px;
+
+  padding: 18px;
+  border-radius: 18px;
+  background: var(--bg);
+  box-shadow: var(--shadow);
+  max-width: 280px;
+  min-height: 500px;
+  max-height: 500px;
+  min-width: 400px;
+
+  animation: rs-fade-in 0.9s ease-in-out;
+}
+
+
+/* ====== 画像サイズ＆スムーズなフェード ====== */
+.risuko-stamp img {
+
+  object-fit: contain;
+  border-radius: 14px;
+  user-select: none;
+  -webkit-user-drag: none;
+  transition: opacity .25s ease, transform .25s ease;
+}
+
+.risuko-caption {
+  margin: 0;
+  font: 600 20px/1.4 system-ui, "Noto Sans JP", sans-serif;
+  color: var(--accent);
+}
+
+.risuko-btn {
+  margin-top: 4px;
+  padding: 8px 14px;
+  font: 600 16px/1 system-ui, "Noto Sans JP", sans-serif;
+  color: #0d0f10;
+  background: var(--accent);
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+}
+.risuko-btn:active { transform: translateY(1px); }
+
+/* ====== アニメーション効果 ====== */
+@keyframes rs-fade-in {
+  from { opacity: 0; transform: translateY(20px) scale(0.8); }
+  to { opacity: 1; transform: translateY(0) scale(1.0); }
+}
+
+.risuko-stamp img.rs-swap-out {
+  opacity: 0;
+  transform: scale(.96);
+}
+
+/* ====== レスポンシブ微調整 ====== */
+@media (max-width: 768px) {
+  .risuko-stamp {
+    margin: 10px auto;
+      max-width: 280px;
+  min-height: 400px;
+  max-height: 480px;
+  min-width: 320px;
+  }
+  .risuko-stamp img {
+
+  }
+}
+/* ====== 追加：親ラッパーを中央寄せにする ====== */
+.risuko-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 0;  /* 「作品を見る」と「お知らせ」の隙間を均等化 */
+}

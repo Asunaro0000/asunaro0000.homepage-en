@@ -1,0 +1,261 @@
+/* =========================================================
+   Top Banner (auto slider) - base style
+   ========================================================= */
+
+/* 共通バナー枠（リス子カード系と同じベース） */
+.top-banner {
+  background: #0e0e0e;            /* 黒い内枠カード */
+  border-radius: 18px;
+  padding: 18px 18px 20px;
+  box-shadow: 0 0 25px rgba(0,0,0,.35);
+
+  min-width: 280px;
+  max-width: 360px;
+  min-height: 400px;
+
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* 正方形バナー用（既存） */
+.top-banner__image-wrap {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  border-radius: 14px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.top-banner__image-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: opacity .4s ease, transform .4s ease;
+}
+
+/* Fade animation */
+.top-banner__image-wrap img.is-fading {
+  opacity: 0;
+  transform: translateX(-14px);
+}
+
+/* テキスト＋ボタンエリア */
+.top-banner__text {
+  margin-top: 12px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.top-banner__caption {
+  font-size: .9rem;
+  color: #eee;
+  margin-bottom: 8px;
+  transition: opacity .25s ease;
+}
+
+/* CTA button */
+.top-banner__btn {
+  display: inline-block;
+  margin-top: 4px;
+  padding: 7px 16px;
+  border-radius: 999px;
+  background: #ffd769;
+  color: #2a2100;
+  font-size: .86rem;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(0,0,0,.4);
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+
+.top-banner__btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0,0,0,.55);
+}
+
+/* ドットインジケータ */
+.top-banner__dots {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.top-banner__dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 999px;
+  background: #666;
+  opacity: .45;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  transition: opacity .15s ease, width .2s ease;
+}
+
+/* Larger click hitbox */
+.top-banner__dot::after {
+  content: "";
+  position: absolute;
+  inset: -6px;
+}
+
+.top-banner__dot:hover {
+  opacity: .8;
+}
+
+.top-banner__dot.is-active {
+  width: 24px;
+  background: #ffd769;
+  opacity: 1;
+  transform: translateY(-1px);
+}
+
+/* =========================================================
+   Bookmarks banner (3 tall images)
+   ========================================================= */
+
+/* 栞セクション全体 */
+.bookmark-banner-section {
+  max-width: 960px;
+  margin: 60px auto 80px;
+  padding: 0 16px;
+  text-align: center;
+}
+
+.bookmark-banner-title {
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+.bookmark-banner-desc {
+  font-size: 13px;
+  opacity: .8;
+  line-height: 1.7;
+  margin-bottom: 16px;
+}
+
+/* 栞用バナー：枠を大きめに */
+.top-banner--bookmarks {
+  max-width: 800px;
+  width: min(960px, 95vw);
+  /* min-height は一旦消す or 小さめに */
+  padding: 28px 32px 40px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+/* 3枚横並びで大きく見せる行 */
+.bookmark-row {
+  height: 600px;  /* ここを好きな高さに上げる */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  margin-bottom: 20px;
+}
+
+
+/* 1枚分のスロット */
+.bookmark-slot {
+  flex: 0 1 180px;                 /* 幅は自動調整・均等 */
+  height: 100%;
+  overflow: hidden;
+  border-radius: 12px;
+  background: #000;                /* 余白が出たときの背景 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 栞画像：全体を見せつつ縦長をキープ */
+.bookmark-slot img {
+  width: auto;
+  height: 100%;
+  object-fit: contain;             /* トリミングしない */
+  object-position: center;
+  transition: opacity .4s ease, transform .4s ease;
+}
+
+/* フェード時 */
+.bookmark-slot img.is-fading {
+  opacity: 0;
+  transform: translateX(-14px);
+}
+
+/* スマホ用調整 */
+@media (max-width: 768px) {
+
+  .bookmark-row {
+    height: 300px; /* ←少し余裕を持たせる */
+    gap: 8px;     /* ←間隔を縮める */
+  }
+
+  .bookmark-slot {
+    flex: 0 1 30%; /* ←今の flex:1 を禁止して幅固定気味に */
+    max-width: 120px; /* ←広がりすぎ防止。表示自然になる */
+  }
+}
+
+@media (max-width: 480px) {
+  .bookmark-row {
+    height: 260px;
+    gap: 6px;
+  }
+
+  .bookmark-slot {
+    flex: 0 1 28%;
+    max-width: 100px;
+  }
+}
+
+/* =========================
+   Bookmark Banner - 準備中表示
+========================= */
+#bookmark-banner {
+  position: relative;
+  pointer-events: none; /* ボタン押せなくしたいときだけ有効（嫌なら消す） */
+}
+
+/* 全体を少し暗く */
+#bookmark-banner .top-banner {
+  filter: brightness(0.55);
+}
+
+/* 準備中オーバーレイ文字 */
+#bookmark-banner::after {
+  content: "準備中";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 22px;
+  font-weight: 600;
+  color: rgba(255,255,255,.95);
+
+  background: rgba(0,0,0,.45);
+  padding: 10px 26px;
+  border-radius: 6px;
+  backdrop-filter: blur(4px);
+  z-index: 10;
+}
+
+/* スマホ縮小 */
+@media(max-width:600px){
+  #bookmark-banner::after {
+    font-size: 16px;
+    padding: 6px 18px;
+  }
+}

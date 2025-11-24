@@ -1,0 +1,260 @@
+:root {
+  --bg-color: #000000;
+  --text-color: #f5f5f5;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* ★ body は JS が変える --bg-color / --text-color を素直に使う */
+body {
+  background: var(--bg-color, #000000);
+  color: var(--text-color, #f5f5f5);
+}
+
+/* =========================
+   七曜循環の壁画
+   ========================= */
+
+/* 部屋全体 */
+.room-wrapper {
+  width: 100vw;
+  max-width: none;
+  margin: 0;
+}
+
+/* 部屋ヘッダー（帯） */
+.room-header {
+  /* 本体背景より少し明るい帯にしたい場合 */
+  background: color-mix(in srgb, var(--bg-color, #000000) 20%, #ffffff 80%);
+  color: var(--text-color, #333333);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+  padding: 8px 16px 6px;
+}
+
+.room-header-main {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 16px;
+}
+
+.room-title {
+  font-size: 1rem;
+  margin: 0;
+}
+
+.room-title-sub {
+  font-size: 0.8rem;
+  opacity: 0.7;
+  margin-left: 4px;
+}
+
+.room-note {
+  margin: 3px 0 0;
+  font-size: 0.78rem;
+  opacity: 0.8;
+}
+
+/* 曜日バッジ */
+.day-badges {
+  display: flex;
+  gap: 4px;
+  font-size: 0.75rem;
+}
+
+.day-btn {
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  background: rgba(255, 255, 255, 0.7);
+  color: inherit;
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  cursor: pointer;
+}
+
+.day-btn.is-active {
+  background: rgba(0, 0, 0, 0.7);
+  color: #fff;
+}
+
+/* ここより下は今のままでOK（グリッド・ライトボックス等） */
+
+
+/* ====== 1行2枚レイアウト（ギャップ0） ====== */
+
+.grid-rows {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+}
+
+.grid-row {
+  display: flex;
+  width: 100vw;
+}
+
+/* 最後が1枚だけの行 */
+.grid-row.single-row {
+  width: 100vw;
+  display: flex;
+}
+
+.grid-cell {
+  flex: 1;
+  display: flex;
+  align-items: center; /* 行の高さに対して縦中央揃え */
+  justify-content: center;
+}
+
+/* 通常セル内の画像 */
+.grid-cell img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* 最下段が1枚の場合用 */
+.full-width {
+  flex: 1;
+}
+
+.full-width img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* 右側が空セルの場合に使っていたクラス（今は未使用だが残しておくならここ） */
+/*
+.grid-cell--empty {
+  visibility: hidden;
+}
+*/
+
+/* ====== クリックで最大化するライトボックス ====== */
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+
+  /* 半透明の黒＋背後ぼかし */
+  background: rgba(0, 0, 0, 0.6);      /* 透かし量は好みで調整 */
+  backdrop-filter: blur(3px);         /* ← ここがぼかし本体 */
+  -webkit-backdrop-filter: blur(10px); /* ← Safari用 */
+
+  z-index: 1000;
+  cursor: zoom-out;
+}
+
+
+.lightbox.is-open {
+  display: flex;
+}
+
+.lightbox img {
+  max-width: 96vw;
+  max-height: 96vh;
+  display: block;
+}
+/* 帯部分も同じテーマ色を使う */
+.room-header {
+  background: var(--theme-bg, #f4f4f4);
+  color: var(--theme-text, #333);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+/* タイトルと曜日バッジを横並びに */
+.room-header-main {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 16px;
+}
+
+.room-title {
+  font-size: 1rem;
+  margin: 0;
+}
+
+
+
+/* 曜日バッジ（ユーザー向けの切り替え） */
+.day-badges {
+  display: flex;
+  gap: 4px;
+  font-size: 0.75rem;
+}
+
+.day-badge {
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  background: rgba(255, 255, 255, 0.7);
+  padding: 2px 8px;
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.day-badge.is-active {
+  background: rgba(0, 0, 0, 0.7);
+  color: #fff;
+}
+
+/* Debug 行はかなり小さく＆薄く（本番は消してOK） */
+.day-debug {
+  margin-top: 2px;
+  font-size: 0.7rem;
+  opacity: 0.4;
+}
+
+.day-btn {
+  border: 1px dashed rgba(0, 0, 0, 0.3);
+  background: transparent;
+  padding: 0 6px;
+  border-radius: 8px;
+  font-size: 0.7rem;
+  cursor: pointer;
+}
+.room-header-line {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 16px;
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+
+.room-title {
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.room-subtitle {
+  opacity: 0.55;
+  font-size: 0.85rem;
+  font-weight: 400;
+}
+
+.divider {
+  opacity: 0.35;
+  font-weight: 300;
+  margin: 0 4px;
+}
+
+/* スマホで長くなった時は自動折り返し */
+@media (max-width: 640px) {
+  .room-header-line {
+    flex-wrap: wrap;
+    line-height: 1.4;
+  }
+}

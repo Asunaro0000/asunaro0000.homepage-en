@@ -32,6 +32,14 @@ const slides = [
     title: "Life of the Forest — Panorama",
     caption: "A horizontal reference exhibit organizing forest structures, flows of light, fallen logs, stumps, and shrines. Useful for background creation and worldbuilding, allowing a clear view of the forest’s continuous landscape."
   },
+  {
+    src: "./thumbnail/kv05.webp",
+    thumb: "./thumbnail/kv05.webp",
+    href: "./Forest-calendar/index.html",
+    title: "Seven-Day Wall Gallery",
+    caption: "The mural changes with each day of the week. Here, the world's history reveals itself through subtle changes in form and flow — one fragment added each day."
+  },
+
 ];
 
 

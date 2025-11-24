@@ -196,13 +196,14 @@ document.addEventListener("DOMContentLoaded", () => {
   // GitHub Pages では /asunaro0000.homepage/ を先頭につける
   // ローカル（/index.html とか）では / から始める
   const base =
-    path.includes("/asunaro0000.homepage/")
-      ? "/asunaro0000.homepage/"
+    path.includes("/asunaro0000.homepage-en/")
+      ? "/asunaro0000.homepage-en/"
       : "/";
 
   window.location.href =
     base + "gallery/renewal-of-the-forest-covenant/Forest-calendar/";
 })();
+
   });
 });
 

@@ -6,6 +6,16 @@ const TODAY_YEAR = TODAY.getFullYear();
 const TODAY_MONTH = TODAY.getMonth() + 1; // 1〜12
 const TODAY_DAY = TODAY.getDate();
 const TODAY_WEEKDAY = TODAY.getDay(); // 0=Sun .. 6=Sat
+// 曜日ごとのリンク先
+const WEEKDAY_LINKS = {
+  0: "gallery/renewal-of-the-forest-covenant/sun/",
+  1: "gallery/renewal-of-the-forest-covenant/mon/",
+  2: "gallery/renewal-of-the-forest-covenant/tue/",
+  3: "gallery/renewal-of-the-forest-covenant/wed/",
+  4: "gallery/renewal-of-the-forest-covenant/thu/",
+  5: "gallery/renewal-of-the-forest-covenant/fri/",
+  6: "gallery/renewal-of-the-forest-covenant/sat/",
+};
 
 // ============================
 // 現在表示中の年月（初期表示 → 今日）
@@ -26,27 +36,25 @@ const TOTAL_COLUMNS = 31; // 幅固定のため常に31列
 // ============================
 const WEEKDAY_IMAGE_STACK = {
   sun: [
-    "assets/calendar/sun/01.webp",
-    "assets/calendar/sun/02.webp",
+    "assets/calendar/sun/kv01.webp",
   ],
   mon: [
-    "assets/calendar/mon/01.webp",
-    "assets/calendar/mon/02.webp",
+    "assets/calendar/mon/kv01.webp",
   ],
   tue: [
-    "assets/calendar/tue/01.webp",
+    "assets/calendar/tue/kv01.webp",
   ],
   wed: [
-    "assets/calendar/wed/01.webp",
+    "assets/calendar/wed/kv01.webp",
   ],
   thu: [
-    "assets/calendar/thu/01.webp",
+    "assets/calendar/thu/kv01.webp",
   ],
   fri: [
-    "assets/calendar/fri/01.webp",
+    "assets/calendar/fri/kv01.webp",
   ],
   sat: [
-    "assets/calendar/sat/01.webp",
+    "assets/calendar/sat/kv01.webp",
   ],
 };
 
@@ -190,28 +198,57 @@ document.addEventListener("DOMContentLoaded", () => {
 
   img.style.cursor = "pointer";
   img.addEventListener("click", () => {
-    (function () {
+   (function () {
   const path = window.location.pathname;
 
   // GitHub Pages では /asunaro0000.homepage/ を先頭につける
   // ローカル（/index.html とか）では / から始める
   const base =
-    path.includes("/asunaro0000.homepage-en/")
-      ? "/asunaro0000.homepage-en/"
+    path.includes("/asunaro0000.homepage/")
+      ? "/asunaro0000.homepage/"
       : "/";
 
   window.location.href =
     base + "gallery/renewal-of-the-forest-covenant/Forest-calendar/";
 })();
-
   });
 });
+
+
+// ============================
+// デバッグ用：曜日切り替えボタン
+// ============================
+function setupDebugWeekSwitch() {
+  const container = document.querySelector(".debug-week-switch");
+  if (!container) return;
+
+  container.addEventListener("click", (e) => {
+    const btn = e.target.closest("button[data-week]");
+    if (!btn) return;
+
+    const weekIndex = Number(btn.dataset.week); // 0〜6
+    console.log("[DEBUG] switch weekday =", weekIndex, WEEK_KEYS[weekIndex]);
+
+    // 0番目の画像を、アニメ付きで切り替え
+    updateWeekdayImage(weekIndex, 0, true);
+
+    // ついでに strip のラベルも更新したいならここで書き換え
+    const labelEl = document.getElementById("strip-label");
+    if (labelEl) {
+      labelEl.textContent = `Debug Week: ${WEEK_KEYS[weekIndex]} (image stack length: ${
+        WEEKDAY_IMAGE_STACK[WEEK_KEYS[weekIndex]].length
+      })`;
+    }
+  });
+}
 
 
 // ============================
 // 初期化
 // ============================
 document.addEventListener("DOMContentLoaded", () => {
+  console.log("[DEBUG] DOMContentLoaded: calendar script start");
+
   const prevBtn = document.querySelector(".nav-prev");
   const nextBtn = document.querySelector(".nav-next");
 
@@ -233,5 +270,13 @@ document.addEventListener("DOMContentLoaded", () => {
   renderStrip(currentYear, currentMonth);
 
   // 画像は「今日の曜日フォルダ」からランダム切り替え運用
-  setupWeekdayImageClick();
+  // ※ここでエラー出て止まる可能性がある
+  if (typeof setupWeekdayImageClick === "function") {
+    setupWeekdayImageClick();
+  } else {
+    console.warn("[DEBUG] setupWeekdayImageClick が定義されていません");
+  }
+
+  // ★デバッグ用：曜日切り替えボタンを有効化
+  setupDebugWeekSwitch();
 });

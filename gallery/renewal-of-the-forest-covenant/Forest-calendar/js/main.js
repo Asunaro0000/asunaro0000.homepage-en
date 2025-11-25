@@ -78,9 +78,9 @@ function applyDayTheme(info) {
 // 必要枚数に合わせて数字を変える
 const IMAGE_COUNTS = {
   mon: 13,
-  tue: 13,
-  wed: 13,
-  thu: 13,
+  tue: 14,
+  wed: 16,
+  thu: 22,
   fri: 13,
   sat: 13,
   sun: 13
@@ -114,7 +114,8 @@ function buildRoom(dayIndex) {
   const grid = document.getElementById("grid-rows");
   const note = document.getElementById("room-note");
 
-
+  // ★ここを追加：前の曜日の画像を全部消す
+  grid.innerHTML = "";
 
   // 01,02 が1行目／03,04 が2行目…という構成
   for (let i = 1; i <= count; i += 2) {

@@ -17,6 +17,24 @@
     gtag('config', 'G-1NCR09VMKR');
   </script>
 
+  <!-- Pinterest Verify -->
+  <meta name="p:domain_verify" content="{{ site.data.tracking.pinterest_verify }}"/>
+
+  <!-- Google Tag Manager -->
+  <script>
+  (function(w,d,s,l,i){
+    w[l]=w[l]||[];
+    w[l].push({'gtm.start': new Date().getTime(), event:'gtm.js'});
+    var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),
+    dl=l!='dataLayer'?'&l='+l:'';
+    j.async=true;
+    j.src='https://www.googletagmanager.com/gtm.js?id={{ site.data.tracking.gtm_id }}' + dl;
+    f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','{{ site.data.tracking.gtm_id }}');
+  </script>
+  <!-- End Google Tag Manager -->
+
   <!-- アセット -->
   <link rel="stylesheet" href="./css/header.css">
   <link rel="stylesheet" href="./css/calendar.css">
@@ -34,6 +52,12 @@
 </head>
 
 <body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5SJ395RM"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+
   <header class="nav">
     <a class="brand" href="./">Asunaro Works</a>
     <nav>

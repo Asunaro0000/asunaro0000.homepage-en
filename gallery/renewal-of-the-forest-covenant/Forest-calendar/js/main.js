@@ -81,9 +81,9 @@ const IMAGE_COUNTS = {
   tue: 14,
   wed: 16,
   thu: 22,
-  fri: 13,
-  sat: 13,
-  sun: 13
+  fri: 16,
+  sat: 24,
+  sun: 22
 };
 
 let currentDayIndex = new Date().getDay(); // デフォルトは実際の曜日

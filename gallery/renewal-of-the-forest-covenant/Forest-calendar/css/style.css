@@ -162,10 +162,12 @@ body {
 }
 
 .lightbox img {
-  max-width: 96vw;
-  max-height: 96vh;
-  display: block;
+  width: 100%;
+  height: auto;
+  max-width: none;
+  max-height: none;
 }
+
 /* 帯部分も同じテーマ色を使う */
 .room-header {
   background: var(--theme-bg, #f4f4f4);

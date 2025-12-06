@@ -65,7 +65,6 @@ const CAPTIONS = {
   "5-6": "On the rooftop, 100% forbidden — but the desire won 🤣⛄️\nScreaming into the sky and hearing it disappear felt insanely good.",
   "5-7": "Talking about nothing while warming up with soup 🔥❄️\nSomehow that quiet moment was the happiest part of the day.",
   "5-8": "Seconds before giving the present — both about to explode from nerves 🤣💝\nOne little gift sending the heart rate into orbit = pure youth energy.",
-
   "5-9": "She pulled me close and the whole world blurred except her 🙌🔥\nHer joyful hug was so intense I couldn’t stop smiling back!",
 };
 

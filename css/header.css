@@ -162,3 +162,22 @@ html, body { margin: 0; padding: 0; }
     background: rgba(255,255,255,.08);
   }
 }
+/* 上の階へアイコンボタン */
+.go-up {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);   /* ヘッダー帯のど真ん中 */
+  font-size: 20px;
+  color: var(--hdr-fg);
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 6px;
+  border: 1px solid rgba(255,255,255,.35);
+  background: rgba(0,0,0,0.18);
+  opacity: .8;
+  transition: 0.2s;
+  user-select: none;
+  line-height: 1;
+}
+

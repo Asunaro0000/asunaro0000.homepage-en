@@ -1,0 +1,366 @@
+/* ===== Base ===== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --bgm-right-space: 10px;
+  --bgm-inner-gap: 6px;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Yu Gothic", sans-serif;
+  background: radial-gradient(circle at top, #0f172a 0, #020617 52%, #000 100%);
+  color: #e5e7eb;
+}
+
+/* ===== Header / Nav ===== */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 16px;
+  background: rgba(15, 23, 42, 0.96);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(148, 163, 184, 0.35);
+}
+
+.nav .brand {
+  font-weight: 600;
+  color: #e5e7eb;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.nav .go-up {
+  margin-left: 4px;
+  margin-right: auto;
+  font-size: 14px;
+  text-decoration: none;
+  color: #9ca3af;
+}
+
+.nav nav {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.nav nav a {
+  font-size: 13px;
+  color: #9ca3af;
+  text-decoration: none;
+  padding: 3px 6px;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+
+.nav nav a:hover {
+  color: #e5e7eb;
+  border-color: rgba(148, 163, 184, 0.6);
+  background: rgba(15, 23, 42, 0.9);
+}
+
+/* ===== Main ===== */
+.room-main {
+  padding: 16px 16px 32px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ===== Suzuko Intro ===== */
+.suzuko-room {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.suzuko-intro {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.suzuko-intro-main {
+  
+  flex: 0 0 260px;
+  margin: 0;
+
+
+  background-color: rgba(0, 0, 0, 0); /* 完全透明 */
+}
+
+.suzuko-intro-main img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.suzuko-intro-text {
+  flex: 1;
+}
+
+.suzuko-intro-lead {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+/* ===== Suzuko Scene List ===== */
+.suzuko-scene-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.suzuko-scene {
+  display: flex;
+  gap: 16px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  background: rgba(15, 23, 42, 0.7);
+  box-shadow: 0 0 14px rgba(0, 0, 0, 0.5);
+}
+
+.suzuko-scene-image {
+  flex: 0 0 200px;
+  margin: 0;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #020617;
+}
+
+.suzuko-scene-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  cursor: pointer;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.suzuko-scene-image img:hover {
+  transform: scale(1.03);
+  opacity: 0.95;
+}
+
+.suzuko-scene-text {
+  flex: 1;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.suzuko-scene-title {
+  margin: 0 0 4px;
+  font-weight: 600;
+  color: #facc15;
+}
+
+/* SP レイアウト調整 */
+@media (max-width: 720px) {
+  .room-main {
+    padding-inline: 10px;
+  }
+
+  .suzuko-intro {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .suzuko-intro-main {
+    flex: none;
+  }
+
+  .suzuko-scene {
+    flex-direction: column;
+  }
+
+  .suzuko-scene-image {
+    flex: none;
+  }
+}
+
+/* ===== Lightbox ===== */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 40;
+}
+
+.lightbox.hidden {
+  display: none;
+}
+
+.lightbox-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.7);
+  backdrop-filter: blur(3px);
+}
+
+.lightbox-inner {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  max-width: min(1200px, 98vw);
+  max-height: min(90vh, 900px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 16px;
+  border-radius: 16px;
+  background: radial-gradient(circle at top, #020617 0, #020617 35%, #000 100%);
+  box-shadow: 0 25px 80px rgba(0, 0, 0, 0.95);
+}
+
+.lightbox-inner img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  border-radius: 12px;
+}
+
+.lightbox-caption {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.8;
+  text-align: center;
+  white-space: pre-line;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 10px;
+  right: 14px;
+  border: none;
+  background: transparent;
+  color: #9ca3af;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* ===== BGM ボタン一式 ===== */
+.bgm-wrap {
+  position: fixed;
+  right: var(--bgm-right-space);
+  bottom: 12px;
+  z-index: 50;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: var(--bgm-inner-gap);
+}
+
+.bgm-toggle {
+  border: none;
+  border-radius: 999px;
+  padding: 5px 10px;
+  font-size: 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(15, 118, 110, 0.95);
+  color: #e0f2f1;
+  cursor: pointer;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.7);
+  transition: box-shadow 0.2s ease, transform 0.2s ease, color 0.2s ease, background 0.2s ease;
+}
+
+.bgm-toggle:hover {
+  transform: translateY(-1px);
+}
+
+.bgm-toggle.is-playing {
+  background: #22c55e;
+  color: #022c22;
+}
+
+.bgm-file-label {
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: rgba(15, 23, 42, 0.9);
+  border: 1px solid rgba(148, 163, 184, 0.7);
+  font-size: 12px;
+  color: #fde68a;
+  opacity: 0.7;
+  max-width: 180px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.bgm-toggle.is-playing + .bgm-file-label {
+  opacity: 1;
+  color: #fbbf24;
+}
+
+/* ===== Footer ===== */
+footer {
+  padding: 16px;
+  text-align: center;
+  font-size: 12px;
+  color: #9ca3af;
+}
+/* ===== Lightbox slider nav ===== */
+.lightbox-inner {
+  /* もともと absolute 指定などがあるので、それはそのまま活かす */
+  position: absolute;
+}
+
+.lightbox-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  border: none;
+  background: rgba(15, 23, 42, 0.8);
+  color: #e5e7eb;
+  width: 36px;
+  height: 36px;
+  border-radius: 999px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.7);
+  transition: background 0.15s ease, transform 0.15s ease, opacity 0.15s ease;
+}
+
+.lightbox-prev {
+  left: 8px;
+}
+
+.lightbox-next {
+  right: 8px;
+}
+
+.lightbox-nav:hover {
+  transform: translateY(-50%) scale(1.05);
+}
+
+.lightbox-nav.is-disabled,
+.lightbox-nav:disabled {
+  opacity: 0.35;
+  cursor: default;
+  box-shadow: none;
+}
+
+/* スマホでのナビ位置微調整 */
+@media (max-width: 720px) {
+  .lightbox-prev {
+    left: 4px;
+  }
+  .lightbox-next {
+    right: 4px;
+  }
+}

@@ -9,6 +9,13 @@
 
   // ★ ここを差し替えれば内容を自由に増減できる
 const banners = [
+{
+  src: "./assets/banner/banner9.webp",
+  caption: "Risuko’s Friend-Brag Room: “Suzuko the White Squirrel” is right here.",
+  href: "./gallery/Risko/suzuko_room/index.html",
+  btnLabel: "▶ Go to Risuko’s Friend-Brag Room: “Suzuko the White Squirrel”"
+},
+
   {
     src: "./assets/banner/banner8.webp",
     caption: "The photo room “Lili & Kaede – Snow Mountain Hike” is available here.",

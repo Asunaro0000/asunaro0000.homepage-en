@@ -19,6 +19,13 @@ const slides = [
     title: "Risuko's Nature Walk — Single Scene",
     caption: "A bright and lively gallery filled with Risuko's world."
   },
+{
+  src: "./thumbnail/kv03.webp",
+  thumb: "./thumbnail/kv03.webp",
+  href: "./suzuko_room/index.html",
+  title: "Risuko’s Friend-Brag Room: Suzuko the White Squirrel — Single Scene",
+  caption: "Risuko brought the dazzling white squirrel Suzuko to show off!"
+},
 ];
 
 

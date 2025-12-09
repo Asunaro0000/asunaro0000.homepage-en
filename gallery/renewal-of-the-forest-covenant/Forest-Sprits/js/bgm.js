@@ -8,7 +8,7 @@
   const btn = document.getElementById("bgm-toggle");
   if (!btn) return;
 
-  const BGM_SRC = "assets/bgm/bgm.mp3";
+  const BGM_SRC = "assets/bgm/bgm.m4a";
 
   let audio = null;
   let isPlaying = false;

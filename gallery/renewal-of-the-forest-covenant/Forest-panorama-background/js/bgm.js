@@ -5,8 +5,8 @@
 
   // ★ ここに自分のファイル名を書くだけでOK
   const tracks = [
-    './assets/bgm/bgm1.mp3',
-    './assets/bgm/bgm2.mp3'
+    './assets/bgm/bgm1.m4a',
+    './assets/bgm/bgm2.m4a'
   ];
 
   let trackIndex = 0;

@@ -224,18 +224,18 @@
 /* =========================
    Bookmark Banner - 準備中表示
 ========================= */
-#bookmark-banner {
+/* #bookmark-banner {
   position: relative;
-  pointer-events: none; /* ボタン押せなくしたいときだけ有効（嫌なら消す） */
-}
+  pointer-events: none; 
+} */
 
 /* 全体を少し暗く */
-#bookmark-banner .top-banner {
+/* #bookmark-banner .top-banner {
   filter: brightness(0.55);
-}
+} */
 
 /* 準備中オーバーレイ文字 */
-#bookmark-banner::after {
+/* #bookmark-banner::after {
   content: "Preparing for release";
   position: absolute;
   top: 50%;
@@ -250,12 +250,12 @@
   border-radius: 6px;
   backdrop-filter: blur(4px);
   z-index: 10;
-}
+} */
 
 /* スマホ縮小 */
-@media(max-width:600px){
+/* @media(max-width:600px){
   #bookmark-banner::after {
     font-size: 16px;
     padding: 6px 18px;
   }
-}
+} */

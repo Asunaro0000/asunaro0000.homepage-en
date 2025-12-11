@@ -7,9 +7,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // 再生するBGMリスト（順番再生 → ループ）
   const PLAYLIST = [
-    "./assets/bgm/bgm1.mp3",
-    "./assets/bgm/bgm2.mp3",
-    "./assets/bgm/bgm3.mp3"
+    "./assets/bgm/bgm1.m4a",
+    "./assets/bgm/bgm2.m4a",
+    "./assets/bgm/bgm3.m4a"
   ];
 
   let currentIndex = 0;

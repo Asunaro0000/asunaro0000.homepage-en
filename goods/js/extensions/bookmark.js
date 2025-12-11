@@ -27,7 +27,7 @@
         "./assets/bookmarks/set2_2.webp",
         "./assets/bookmarks/set2_2.webp",
       ],
-      caption: "栞の背面デザインです。",
+      caption: "This is the backside design of the bookmark.",
       href: "https://booth.pm",
       btnLabel: "▶ View Set A"
 

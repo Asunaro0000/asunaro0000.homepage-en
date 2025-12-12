@@ -244,10 +244,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
     if (hidden) {
       header.classList.add('is-hidden');
-      toggleBtn.textContent = 'ヘッダーを表示';
+      toggleBtn.textContent = 'Show Header';
     } else {
       header.classList.remove('is-hidden');
-      toggleBtn.textContent = 'ヘッダーを隠す';
+      toggleBtn.textContent = 'Hide Header';
     }
   });
 });

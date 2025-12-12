@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // 各シーンの外部リンク
   const SCENE_LINKS = {
     "scene-001": "https://asunaro0000.github.io/risuko/",
-    "scene-002": "./scenes/The Winter Encounter/index.html"
+    "scene-002": "./scenes/The-Winter-Encounter/index.html"
   };
 
 const SCENES = [

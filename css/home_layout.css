@@ -245,3 +245,20 @@
   cursor: pointer;
   transition: background 0.2s, transform 0.1s;
 }
+
+.latest-update {
+  display: inline-block;
+  padding: 6px 10px;
+  color: #bfe9ff;              /* 淡い水色でリンク感を出す */
+  font-weight: 600;
+  text-decoration: underline;   /* リンクであることを明確に */
+  text-underline-offset: 4px;
+  background: rgba(255, 255, 255, 0.05); /* ほんのり背景をつけて目立たせる */
+  border-radius: 6px;
+  transition: color 0.2s ease, background 0.2s ease;
+}
+
+.latest-update:hover {
+  color: #ffffff;                /* ホバー時は白でくっきり */
+  background: rgba(255, 255, 255, 0.12);
+}

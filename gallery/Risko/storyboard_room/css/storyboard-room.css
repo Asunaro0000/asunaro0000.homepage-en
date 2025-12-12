@@ -1,0 +1,135 @@
+/* ===== Base ===== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --bgm-right-space: 10px;
+  --bgm-inner-gap: 6px;
+}
+
+
+
+
+/* ===== Main ===== */
+.room-main {
+  padding: 16px 16px 32px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ===== Storyboard Intro ===== */
+.storyboard-room {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.storyboard-intro {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.storyboard-intro-main {
+  flex: 0 0 260px;
+  margin: 0;
+  background-color: rgba(0, 0, 0, 0); /* 完全透明 */
+}
+
+.storyboard-intro-main img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.storyboard-intro-text {
+  flex: 1;
+}
+
+.storyboard-intro-lead {
+  margin: 0;
+  font-size: 18px;
+  line-height: 1.8;
+}
+
+/* ===== Storyboard Scene List ===== */
+.storyboard-scene-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.storyboard-scene {
+  display: flex;
+  gap: 16px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  background: rgba(15, 23, 42, 0.7);
+  box-shadow: 0 0 14px rgba(0, 0, 0, 0.5);
+}
+
+.storyboard-scene-image {
+  flex: 0 0 200px;
+  margin: 0;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #020617;
+}
+
+.storyboard-scene-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  cursor: pointer;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.storyboard-scene-image img:hover {
+  transform: scale(1.03);
+  opacity: 0.95;
+}
+
+.storyboard-scene-text {
+  flex: 1;
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+.storyboard-scene-title {
+  margin: 0 0 4px;
+  font-weight: 600;
+  color: #facc15;
+}
+
+/* SP レイアウト調整 */
+@media (max-width: 720px) {
+  .room-main {
+    padding-inline: 10px;
+  }
+
+  .storyboard-intro {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .storyboard-intro-main {
+    flex: none;
+  }
+
+  .storyboard-scene {
+    flex-direction: column;
+  }
+
+  .storyboard-scene-image {
+    flex: none;
+  }
+}
+
+
+

@@ -1,0 +1,67 @@
+name: Deploy Pages (cache-bust)
+
+on:
+  push:
+    branches: ["main"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # 公開フォルダを _site に集める（.githubなどは除外）
+      - name: Prepare site folder
+        run: |
+          mkdir -p _site
+          rsync -a --delete \
+            --exclude ".git" \
+            --exclude ".github" \
+            ./ _site/
+
+      # HTML内の CSS/JS 参照に ?v=<commit> を付ける
+      - name: Add cache-busting query (?v=<commit>)
+        env:
+          VER: ${{ github.sha }}
+        run: |
+          cd _site
+          find . -type f -name "*.html" -print0 | xargs -0 perl -0777 -i -pe '
+            $ver = $ENV{VER};
+            s/(<link\b[^>]*\bhref=(["'"'"'])(?!https?:\/\/)([^"'"'"']+?\.css))\2(?!\?)/$1?v=$ver$2/g;
+            s/(<script\b[^>]*\bsrc=(["'"'"'])(?!https?:\/\/)([^"'"'"']+?\.js))\2(?!\?)/$1?v=$ver$2/g;
+          '
+
+      # ここが重要: Pages siteが無い場合でも有効化して作る
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+        with:
+          enablement: true
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

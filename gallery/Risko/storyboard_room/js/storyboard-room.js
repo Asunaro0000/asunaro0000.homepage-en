@@ -4,7 +4,8 @@ document.addEventListener("DOMContentLoaded", () => {
   // 各シーンの外部リンク
   const SCENE_LINKS = {
     "scene-001": "https://asunaro0000.github.io/risuko/",
-    "scene-002": "./scenes/The-Winter-Encounter/index.html"
+    "scene-002": "./scenes/The-Winter-Encounter/index.html",
+    "scene-003": "./scenes/This-Is-Our-Place/index.html"
   };
 
 const SCENES = [
@@ -28,13 +29,15 @@ const SCENES = [
   },
   {
     id: "scene-003",
-    thumb: "./assets/images/3-0.webp",
-    title: "",
+    thumb: "./assets/images/02.webp",
+    title: "#02 This Is Our Place.",
     text: [
-
+      "The day we decided to build a secret base.",
+      "Once we placed a marker, it became a place we could always come back to."
     ]
-  },
+  }
 ];
+
 
 
   // ===== リスト描画 =====

@@ -41,11 +41,12 @@ const SCENES = [
     id: "scene-004",
     thumb: "./assets/images/03.webp",
     title: "#03 Heading for the Summit.",
-    text: [
-      "A scene from a picture book she once saw suddenly overlapped with reality.",
-      "She felt that if they did not go now, she would regret it.",
-      "Before they knew it, their steps were already light and quick."
-    ]
+text: [
+  "The scenery from an old picture book,",
+  "suddenly matched the view right in front of them.",
+  "\"We have to go now!\"",
+  "Once they thought that, they could not stop anymore."
+]
   },
 ];
 

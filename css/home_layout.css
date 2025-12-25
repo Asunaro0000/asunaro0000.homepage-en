@@ -247,6 +247,7 @@
 }
 
 .latest-update {
+  font-size: 20px;
   display: inline-block;
   padding: 6px 10px;
   color: #bfe9ff;              /* 淡い水色でリンク感を出す */
@@ -261,4 +262,10 @@
 .latest-update:hover {
   color: #ffffff;                /* ホバー時は白でくっきり */
   background: rgba(255, 255, 255, 0.12);
+}
+
+@media (max-width: 959.98px) {
+  .latest-update {
+    font-size: 16px;
+  }
 }

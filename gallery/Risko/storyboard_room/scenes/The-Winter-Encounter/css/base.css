@@ -73,6 +73,7 @@ body {
 ------------------------------ */
 
 #cap {
+  font-size: 20px!important;
   margin-top: 8px;
   width: 100%;
   max-width: var(--image-max-width);

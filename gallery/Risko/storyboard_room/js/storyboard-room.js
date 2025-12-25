@@ -6,7 +6,8 @@ document.addEventListener("DOMContentLoaded", () => {
     "scene-001": "https://asunaro0000.github.io/risuko/",
     "scene-002": "./scenes/The-Winter-Encounter/index.html",
     "scene-003": "./scenes/This-Is-Our-Place/index.html",
-    "scene-004": "./scenes/Aiming-for-the-summit/index.html"
+    "scene-004": "./scenes/Aiming-for-the-summit/index.html",
+    "scene-005": "./scenes/04_The-Songstresses-and-Their-First-Fan/index.html" 
   };
 
 const SCENES = [
@@ -41,13 +42,24 @@ const SCENES = [
     id: "scene-004",
     thumb: "./assets/images/03.webp",
     title: "#03 Heading for the Summit.",
-text: [
-  "The scenery from an old picture book,",
-  "suddenly matched the view right in front of them.",
-  "\"We have to go now!\"",
-  "Once they thought that, they could not stop anymore."
-]
+    text: [
+      "The scenery from an old picture book,",
+      "suddenly matched the view right in front of them.",
+      "\"We have to go now!\"",
+      "Once they thought that, they could not stop anymore."
+    ]
   },
+  {
+    id: "scene-005",
+    thumb: "./assets/images/04.webp",
+    title: "#04 The Songstresses and Their First Fan.",
+    text: [
+      "In the snowy forest, Risuko and Suzuko searched for sound.",
+      "When the whistle was played, the tanuki always came to listen.",
+      "Before they knew it, the singing began, and the forest became the audience."
+    ]
+  }
+
 ];
 
 

@@ -8,8 +8,8 @@ document.addEventListener("DOMContentLoaded", () => {
     "scene-003": "./scenes/This-Is-Our-Place/index.html",
     "scene-004": "./scenes/Aiming-for-the-summit/index.html",
     "scene-005": "./scenes/04_The-Songstresses-and-Their-First-Fan/index.html" ,
-    "scene-006": "./scenes/05_Feather-Letter-and-the-Forest-Signposts/index.html" 
-    
+    "scene-006": "./scenes/05_Feather-Letter-and-the-Forest-Signposts/index.html" ,
+    "scene-007": "./scenes/06_Busy-Day-at-the-Chicken-Coop/index.html" 
   };
 
 const SCENES = [
@@ -70,7 +70,17 @@ const SCENES = [
       "They did not know the reason, but the owl’s face was strangely serious.",
       "In this forest, it seems that feelings arrive before words."
     ]
-  }
+  },
+    {
+      id: "scene-007",
+      thumb: "./assets/images/06.webp",
+      title: "#06 Busy Day at the Chicken Coop",
+      text: [
+    "A moment of carelessness during cleaning lets the chickens escape into the snowy field, and Risuko and Suzuko give chase.",
+    "Each time they get close the chickens flee, but by changing her approach, Risuko slowly closes the distance.",
+    "Another chicken, its eggs, and a new strategy — the situation is still unfolding."
+      ]
+    },
 
 ];
 

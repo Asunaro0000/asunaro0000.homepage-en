@@ -18,7 +18,7 @@
         "./assets/bookmarks/set1_3.webp",
       ],
       caption: "A bookmark set with quiet colors that capture the forest and winter atmosphere.",
-      href: "https://booth.pm",         // 実際のBOOTH URLに差し替え
+      href: "https://asunaro0000.booth.pm/items/7743487",         // 実際のBOOTH URLに差し替え
       btnLabel: "▶ View Set B"
     },
     {
@@ -28,7 +28,7 @@
         "./assets/bookmarks/set2_2.webp",
       ],
       caption: "This is the backside design of the bookmark.",
-      href: "https://booth.pm",
+      href: "https://asunaro0000.booth.pm/items/7743487",
       btnLabel: "▶ View Set A"
 
     },

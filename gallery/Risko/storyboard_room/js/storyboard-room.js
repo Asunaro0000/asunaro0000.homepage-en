@@ -9,7 +9,8 @@ document.addEventListener("DOMContentLoaded", () => {
     "scene-004": "./scenes/Aiming-for-the-summit/index.html",
     "scene-005": "./scenes/04_The-Songstresses-and-Their-First-Fan/index.html" ,
     "scene-006": "./scenes/05_Feather-Letter-and-the-Forest-Signposts/index.html" ,
-    "scene-007": "./scenes/06_Busy-Day-at-the-Chicken-Coop/index.html" 
+    "scene-007": "./scenes/06_Busy-Day-at-the-Chicken-Coop/index.html" ,
+    "scene-008": "./scenes/07_Warm-Moment-in-Winter/index.html" 
   };
 
 const SCENES = [
@@ -81,7 +82,16 @@ const SCENES = [
     "Another chicken, its eggs, and a new strategy — the situation is still unfolding."
       ]
     },
-
+    {
+      id: "scene-008",
+      thumb: "./assets/images/07.webp",
+      title: "#07 Fluffy Winter Moments and a Warm Place to Belong.",
+      text: [
+        "In the cold winter forest, Risuko and Suzuko warm themselves with coffee and fluffy comfort.",
+        "After meeting a lost lamb in the rain, they travel through the night forest in search of its flock.",
+        "What they find at the end is a place where both body and heart can rest in warmth and safety."
+      ]
+    },
 ];
 
 

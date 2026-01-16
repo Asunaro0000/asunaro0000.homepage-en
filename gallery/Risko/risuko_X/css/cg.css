@@ -1,0 +1,215 @@
+:root{
+  --bg:#0c0e11;
+  --fg:#e9edf3;
+  --muted:#9aa3b2;
+  --line:#242a33;   /* ← グリッド線色 */
+  --card:#12161c;
+  --acc:#6ee7b7;
+}
+
+html,body{
+  margin:0;
+  padding:0;
+  color:var(--fg);
+  font:16px/1.7 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;
+}
+
+/* ==============================
+   Layout
+================================= */
+.container{
+  max-width:1080px;
+  margin:56px auto;
+  padding:0 16px;
+}
+
+h1{
+  font-size:clamp(22px,3.4vw,32px);
+  letter-spacing:.02em;
+  margin:18px 0 6px;
+}
+
+.lead{
+  color:var(--muted);
+  margin:0 0 16px;
+}
+
+/* ==============================
+   Cards grid
+   - 縦スクロール
+   - PC:3列 / Mobile:2列
+   - ギャップなし
+   - グリッド線あり
+================================= */
+.cards{
+  display:grid;
+  grid-template-columns:repeat(3, 1fr);
+  gap:0;
+  align-items:start;
+  border-top:1px solid var(--line);
+  border-left:1px solid var(--line);
+}
+
+/* ==============================
+   Card（1マス）
+================================= */
+.card{
+  margin:0;
+  border-right:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+  border-radius:0;
+  background:none;
+  overflow:hidden;
+  display:block;
+  cursor:pointer;
+}
+
+/* ==============================
+   Image
+   - 実アスペクト比保持
+================================= */
+.card__imgwrap{
+  aspect-ratio:auto;
+  background:none;
+}
+
+.card__imgwrap img{
+  display:block;
+  width:100%;
+  height:auto;
+  object-fit:contain;
+}
+
+/* ==============================
+   Title / Caption（不要）
+================================= */
+.card__meta,
+.card__title,
+.card__caption{
+  display:none;
+}
+
+/* ==============================
+   Lightbox
+================================= */
+.lightbox[hidden]{
+  display:none !important;
+}
+
+.lightbox{
+  position:fixed;
+  inset:0;
+  z-index:50;
+  background:rgba(3,6,10,.9);
+  display:grid;
+  place-items:center;
+  padding:24px;
+}
+
+.lb__close{
+  position:absolute;
+  top:14px;
+  right:14px;
+  width:40px;
+  height:40px;
+  border-radius:10px;
+  border:1px solid var(--line);
+  background:rgba(255,255,255,.06);
+  color:var(--fg);
+  font-size:22px;
+  cursor:pointer;
+  z-index:3;
+}
+
+.lb__stage{
+  max-width:min(92vw,1080px);
+  max-height:86vh;
+  margin:0;
+  
+}
+.lb__stage figcaption{
+  margin-top:12px;
+  max-height: 22vh;        /* ← テキスト用の高さ */
+  overflow-y: auto;        /* ← ここだけスクロール */
+  position: relative;
+  z-index: 5;
+}
+
+.lb__stage img{
+  display:block;
+  max-width:100%;
+  max-height:70vh;
+  width:auto;
+  height:auto;
+  object-fit:contain;
+  margin:0 auto;
+  background:#0b0f14;
+}
+
+
+
+/* ==============================
+   Click zones
+================================= */
+.lb__zone{
+  position:fixed;
+  top:0;
+  bottom:0;
+  width:50vw;
+  cursor:pointer;
+  outline:none;
+  user-select:none;
+  -webkit-tap-highlight-color:transparent;
+}
+
+.lb__zone--prev{ left:0; }
+.lb__zone--next{ right:0; }
+
+/* ==============================
+   Mobile（2列）
+================================= */
+@media (max-width:640px){
+  .cards{
+    grid-template-columns:repeat(2, 1fr);
+  }
+
+  .lb__stage img{
+    max-height:64vh;
+  }
+}
+
+/* ==============================
+   Filter buttons
+================================= */
+.filter-group{
+  display:flex;
+  gap:10px;
+  margin-bottom:30px;
+  flex-wrap:wrap;
+  justify-content:center;
+}
+
+.filter-btn{
+  padding:10px 24px;
+  background:var(--card);
+  border:1px solid var(--line);
+  color:var(--muted);
+  border-radius:30px;
+  cursor:pointer;
+  font-weight:bold;
+  transition:all .2s;
+}
+
+.filter-btn:hover{
+  border-color:var(--acc);
+  color:var(--fg);
+}
+
+.filter-btn.is-active{
+  background:var(--acc);
+  color:#000;
+  border-color:var(--acc);
+}
+.lb__stage p{
+  white-space: pre-wrap;
+}

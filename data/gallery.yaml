@@ -28,14 +28,17 @@ exhibits:
         thumb: ./story_board/kv01.png
         #href: ./story_board/
         title: "Usako & Kameko"
+
+      - src: ./story_board/kv01.webp
+        thumb: ./story_board/kv01.webp
+        #href: ./story_board/
+        title: "Forest Gifts — Risuko's Little Journey"
+
       - src: ./story_board/kv02.png
         thumb: ./story_board/kv02.png
         #href: ./story_board/
         title: "Renewal of the Forest Covenant"
-      - src: ./story_board/kv03.png
-        thumb: ./story_board/kv03.png
-        #href: ./story_board/
-        title: "Forest Gifts — Risuko's Little Journey"
+
       - src: ./story_board/kv04.png
         thumb: ./story_board/kv04.png
         #href: ./story_board/

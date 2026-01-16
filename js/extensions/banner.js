@@ -10,19 +10,19 @@
   // ★ ここを差し替えれば内容を自由に増減できる
 const banners = [
 {
-  src: "./assets/banner/banner9.webp",
-  caption: "Risuko’s Friend-Brag Room: “Suzuko the White Squirrel” is right here.",
-  href: "./gallery/Risko/suzuko_room/index.html",
-  btnLabel: "▶ Go to Risuko’s Friend-Brag Room: “Suzuko the White Squirrel”"
+  src: "./assets/banner/banner11.webp",
+  caption: "A collection of daily posts from X.",
+  href: "./gallery/Risko/risuko_X/index.html",
+  btnLabel: "▶ X Post Collection 'Forest Murmur Room'"
+},
+{
+  src: "./assets/banner/banner12.webp",
+  caption: "Risuko's storyboard collection is here.",
+  href: "./gallery/Risko/storyboard_room/index.html",
+  btnLabel: "▶ Go to Risuko's Storyboard Room"
 },
 
-  {
-    src: "./assets/banner/banner8.webp",
-    caption: "The photo room “Lili & Kaede – Snow Mountain Hike” is available here.",
-    href: "./gallery/lili_and_kaede/photo_snow_mountain/index.html",
-    btnLabel: "▶ Go to room Lili & Kaede – Snow Mountain Hike"
-  },
-  {
+ /* {
     src: "./assets/banner/banner7.webp",
     caption: "Visit the Forest Archive Room: Forest Activity.",
     href: "./gallery/renewal-of-the-forest-covenant/Forest-panorama-background/index.html",
@@ -46,7 +46,7 @@ const banners = [
     href: "./gallery/Risko/risuko_room/index.html",
     btnLabel: "▶ View Risuko's Panorama"
   },
-  /*{
+  {
     src: "./assets/banner/banner3.webp",
     caption: "The background art room of Shiori no Mori is now open.",
     href: "./gallery/renewal-of-the-forest-covenant/Forest_of_Story_Marks/index.html",
@@ -57,13 +57,13 @@ const banners = [
     caption: "Kameko's daily-life gallery has been released.",
     href: "./gallery/Usako_and_Kameko/kameko_diary/index.html",
     btnLabel: "▶ Visit Kameko's Daily Life"
-  },
+  },*/
   {
     src: "./assets/banner/banner1.webp",
     caption: "Usako's daily-life gallery has been released.",
     href: "./gallery/Usako_and_Kameko/usako_diary/index.html",
     btnLabel: "▶ Visit Usako's Daily Life"
-  },*/
+  },
 ];
 
 

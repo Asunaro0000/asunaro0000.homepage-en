@@ -269,3 +269,23 @@
     font-size: 16px;
   }
 }
+
+
+.patreon {
+  font-size: 18px;                 /* 24px → 少し落とす */
+  display: inline-block;
+  padding: 4px 8px;
+  color: #cfe6f2;                  /* 水色を少しグレー寄りに */
+  font-weight: 500;                /* 600 → 控えめに */
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  background: rgba(255, 255, 255, 0.03); /* 背景をさらに薄く */
+  border-radius: 6px;
+  opacity: 0.85;                   /* 常時やや控えめ */
+  transition: opacity 0.2s ease, color 0.2s ease;
+}
+
+.patreon:hover {
+  opacity: 1;
+  color: #e6f4ff;                  /* ホバー時だけ少し明るく */
+}

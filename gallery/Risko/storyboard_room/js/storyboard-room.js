@@ -10,7 +10,8 @@ document.addEventListener("DOMContentLoaded", () => {
     "scene-005": "./scenes/04_The-Songstresses-and-Their-First-Fan/index.html" ,
     "scene-006": "./scenes/05_Feather-Letter-and-the-Forest-Signposts/index.html" ,
     "scene-007": "./scenes/06_Busy-Day-at-the-Chicken-Coop/index.html" ,
-    "scene-008": "./scenes/07_Warm-Moment-in-Winter/index.html" 
+    "scene-008": "./scenes/07_Warm-Moment-in-Winter/index.html" ,
+    "scene-009": "./scenes/08_The-beginning-of-a-new-feast/index.html" 
   };
 
 const SCENES = [
@@ -92,6 +93,16 @@ const SCENES = [
         "What they find at the end is a place where both body and heart can rest in warmth and safety."
       ]
     },
+    {
+      "id": "scene-009",
+      "thumb": "./assets/images/08.webp",
+      "title": "#08 The Start of a New Feast",
+      "text": [
+        "Cookie making in the snowy kitchen. A lively cooking session begins with Suzuko and Lisko, who can't resist sneaking a few bites.",
+        "On their way to the oven, the sweet aroma draws in deer and goats, turning their journey into a delightful snack parade.",
+        "The day ends with all their friends gathered around the table, full and happy, completely forgetting the winter chill."
+      ]
+    }
 ];
 
 
